@@ -1,0 +1,1661 @@
+/*APPEL DES POLICES */
+
+@font-face {
+    font-family: "lato light";
+    src: url(../fonts/Lato/Lato-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "lato regular";
+    src: url(../fonts/Lato/Lato-Regular.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "lato bold";
+    src: url(../fonts/Lato/Lato-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "lato italic";
+    src: url(../fonts/Lato/Lato-Italic.ttf);
+    font-weight: normal;
+    font-style:italic;
+}
+
+@font-face {
+    font-family: "amatic regular";
+    src: url(../fonts/AmaticsSC/AmaticSC-Regular.ttf);
+    font-weight: normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: "amatic bold";
+    src: url(../fonts/AmaticsSC/AmaticSC-Bold.ttf);
+    font-weight: bold;
+    font-style:normal;
+}
+
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+
+/*GENERAL A TOUTES LES PAGES DU SITE*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color:#fdf0e3;
+    padding-bottom: 2%;
+    color : #010101;
+    line-height :1.2;
+}
+
+h1 {
+    font-size: 5rem ;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    padding-bottom: 2%;
+    padding-top : 2%;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+h4 {
+    font-size: 1.8rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+h5 {
+    font-size: 1.5rem ;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    margin-block-start:0em;
+    margin-block-end: 0em;
+}
+
+    h6 {
+    font-size:1rem; 
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+/*boutons*/
+
+button,
+input[type="submit"] {
+    border-radius:3px;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    padding-top :1%;
+    padding-bottom :1%;
+    background-color: #c4c9c7;
+    color: #010101;
+    font-size: 1.2rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+
+
+/*HEADER VERSION MOBILE*/
+/*............................................................*/
+/*............................................................*/
+
+#header {
+    background-color:#079992;
+    color: #fcfcfc;
+    padding: 1%;
+    line-height :1.2;
+}
+
+/*logo header*/
+
+#header #logo {
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*menu hamburger header*/
+
+#header #menuHamburger {
+    display: block;
+    position :absolute; 
+    top : 5px;
+    right :20px;
+    max-width:40px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+/*nav header*/
+
+#header #navHeader {
+    display :none;
+}
+
+#header nav {
+    margin-bottom:3%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header nav a {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "amatic bold";
+    font-size: 2rem;
+    color: #fcfcfc;
+    text-decoration: none;
+    line-height :1.5;
+}
+
+#header nav a:visited {
+    text-decoration: none;
+    color: #fcfcfc;
+}
+
+/*infos compte header*/
+
+#header #connexion {
+    display : none;
+}
+
+#header .infoscompte {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align : center;  
+}
+
+#header h5 {
+    text-align: center;
+    margin-right: auto;
+    margin-left :auto;
+}
+
+#header input {
+    display : block;
+    text-align: center;
+    margin-right: auto;
+    margin-left :auto;
+    height: 25px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid #7d7f7d;
+    border-radius: 3px;   
+}
+
+#header input::placeholder {
+    font-family: "lato italic";
+    font-style: italic;
+    font-size: 1rem;
+    color: #7d7f7d;
+    text-align: center;
+}
+
+#header input[type="submit"],
+#header button {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align :center;
+    font-size:1rem;
+}
+
+#header a {
+    text-decoration : none;
+    color: #fcfcfc;
+}
+
+#header a:visited {
+    text-decoration: none;
+    color: #fcfcfc;
+}
+
+#header small{
+    font-family: "lato regular";
+    font-size : 0.7rem;
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
+/*FIN HEADER..................................................*/
+/*............................................................*/
+/*............................................................*/
+
+
+
+/*DEBUT INDEX VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+    
+  
+/*INDEX 2*/
+
+/*MODAL*/
+
+#modalNL{
+    width:35%;
+    color: #fcfcfc;
+    background-color: #079992;
+    font-size: 2rem;
+    border: 1px solid #010101;
+    border-radius: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    padding: 5px;
+    margin: 5px;
+    z-index: 999;
+}
+
+#modalNL p {
+    font-family: "amatic bold";
+    font-size: 2rem;
+}
+
+#emailNL {
+    width:80%;
+    height: 25px;
+    margin: 1%;
+}
+
+#FormNL .Btn {
+    color: #010101;
+    background-color: #fcfcfc;
+    border: 1px solid #010101;
+    border-radius: 10px;
+    font-family: "amatic regular";
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    display : inline-block;
+    padding: 2px;
+}
+
+#btnNo {
+    font-family: "amatic regular";
+    text-decoration: none;
+}
+
+
+
+#index #container-image {
+    background-image: url(../img/farmer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;   
+}
+
+#container-image p {
+    text-align: center;
+}
+
+#index .accueil {
+    font-size: 1.3rem;
+    font-family: 'lato regular';
+    text-shadow: 5px 3px 3px black;
+    color: white;   
+}
+
+#index #producteurs img {
+    width: 240px;
+    height: 240px;
+    border-radius: 120px;
+    margin-top: 40px;
+    margin-bottom: 30px; 
+}
+
+.accueil a { 
+    color: white;
+    display : inline-block;
+    margin-top: 2%;
+    text-transform: uppercase;
+    font-family: "amatic regular";
+    font-size : 1.5rem;
+}
+
+.accueil a:visited{
+    color: white;
+}
+
+#index .presentation{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    margin-top: 110px; 
+}
+
+#index .icones{
+    color: #079992;
+    font-size: 4.5rem;
+}
+
+#index figcaption {
+    font-size: 1.2rem;
+    text-align: justify;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+#index {
+    text-align: center;
+    font-family: "lato light";
+}
+
+#index .texteBas{
+    margin-top: 20px;
+}
+
+#index h3{
+    text-shadow: 3px 3px 3px black;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#index p {
+    font-size: 1.2rem;
+}
+
+#index #banniere {
+    border: 2px solid black;
+    border-left: none;
+    border-right: none;
+}
+
+/* modal cookies (disparition avec JS)*/
+#index #cookies {
+    position: fixed;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color : white;
+    display : block;
+    color : black;
+}
+
+#index #cookies p {
+    padding: 20px;
+    text-align: left;
+    font-size : 1rem;
+    font-family: "lato regular";
+}
+    
+#index #accepter {
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 5px;
+} 
+
+
+/* FIN INDEX VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+
+
+/* COMPTE VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+#compte h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-decoration: underline;
+}
+
+#compte #form1,
+#compte #form2 {
+    border: 2px dashed black;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 50px;
+    font-family: "Amatic Regular";
+}
+
+#compte #coordonnees {
+    text-align:center;
+    font-family: "amatic bold";
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 2rem;
+}
+
+#compte #champs {
+    text-align:left;
+    font-family: "amatic bold";
+    font-size: 0.7rem;
+}
+
+#compte label {
+    display: inline-block;
+    width: 250px;
+    text-align: left;
+    font-size: 1.6rem;
+}
+
+#compte #form1 input,
+#compte #form2 input {
+    display: inline-block;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #7d7f7d;
+    height: 30px;
+    margin-bottom : 5px;
+    padding-inline-start: 0px;
+}
+
+#compte #form2 select,
+#compte #form2 #start {
+    display: inline-block;
+    align-items:flex-start;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #7d7f7d;
+    height: 30px;
+    align-items: left;
+    margin : 0;
+    margin-bottom : 5px;
+    padding-inline-start: 0px;
+}
+
+#compte #form2 option,
+#compte #form2 #start {
+    font-family: 'lato regular';
+    font-size: 0.9rem;
+    color: #7d7f7d;
+    text-align: left;
+}
+
+#compte #p1, 
+#compte #p2 {
+    text-align: center;
+    background-color: red;
+    color : white;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+#compte input::placeholder {
+    font-family: 'lato italic';
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #7d7f7d;
+    text-align: left;
+}
+
+#form1 button,
+#form2 button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align :center;
+    font-family:"amatic bold";
+    font-size:2rem;
+}   
+
+/* FIN COMPTE VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+
+
+/*PAGE PANIERS VERSION MOBILE*/
+/*............................................................*/
+/*............................................................*/
+
+/*paniers*/
+
+
+#titre {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#titre .chapo {
+    font-size: 1.2rem;
+    font-family: "lato bold";
+    font-weight: bold;
+    text-align : center;
+    margin-bottom: 1rem;
+}
+
+.paniers {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.descriptionpanier {
+    padding-top : 2%;
+    padding-bottom :2%
+}
+
+#figure1, 
+#figure2,
+#figure3 {
+    border:1px dashed #010101;
+    border-radius: 5px;
+    padding: 2%;
+    margin-block-end: 1em;
+}
+
+#figure1 figcaption b,
+#figure2 figcaption b,
+#figure3 figcaption b {
+    font-family: "lato bold";
+    font-size: 1rem;
+}
+
+#figure1 label,
+#figure2 label,
+#figure1 label {
+    font-family: "lato bold";
+    font-size: 1rem;
+}
+
+#ensavoirplus1, 
+#ensavoirplus2, 
+#ensavoirplus3 {
+    font-family: "lato regular";
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+
+.paniers .imgpanier {
+    max-width: 90% ;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+
+
+.paniers .prixpanier {
+    display :inline-block;
+    color: #079992;
+    font-family: "amatic bold";
+    font-style:normal;
+    font-size: 2.5rem;
+    padding: 4%;
+    margin-bottom: 5%;
+    border-bottom : 2px solid #079992;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.paniers .quantitepanier{
+    padding : 7%;
+}
+
+.paniers a,
+.paniers a:visited{
+    display :block;
+    color :#079992;
+    font-family : "amatic bold";
+    font-size : 2rem;
+    text-decoration: none;
+    padding-top : 3%;
+    padding-bottom : 3%;
+}
+
+
+.paniers i {
+    display:inline-block;
+    color: #079992;
+}
+
+
+.paniers input[type="submit"]{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+    margin-top: 10%;
+    margin-bottom :5%;
+}
+
+.paniers .value {
+    margin-top : 1%;
+    margin-bottom : 1%;
+}
+
+
+/*display click avec JS*/
+#descriptionpanier1,
+#descriptionpanier2,
+#descriptionpanier3 {
+    display: none;
+    font-family : "amatic bold";
+    font-size : 1.2rem;
+}
+
+/* modal avec JS page paniers et page commande*/
+#alertAjoutPanier, 
+#alertConnexionCommande {
+    display : none;
+
+    position: fixed;
+    left :0;
+    bottom: 0;
+    width: 100%;
+    z-index: 10; 
+    background-color: #fefefe;
+    color: #079992;
+    font-size:2rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    padding: 10px;  
+}
+
+
+
+
+/*FIN PAGE PANIER*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+
+
+
+/*PAGE MA COMMANDE VERSION MOBILE*/
+/*............................................................*/
+/*............................................................*/
+
+#maCommande main {
+    background-color:#fdf0e3;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color : #010101;
+    line-height :1.2;
+    font-size: 1.2rem;
+}
+
+#maCommande {
+    border : 1px dashed #010101;
+    border-radius: 5px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top :3%;
+    overflow-x:auto;
+}
+
+#maCommande h2 {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+
+#maCommande table {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;    
+    border-collapse: collapse;
+}
+
+#maCommande th {
+    font-family: "amatic bold";
+    vertical-align:center;
+    border-bottom: 1px dashed #010101;
+    padding :3%;
+}
+
+#maCommande td {
+    padding:3%;
+    font-family :"lato regular";
+}
+
+#maCommande table tfoot td {
+    text-align: right; 
+    text-transform: uppercase;
+    border-top :  1px dashed #010101;
+    border-bottom:  1px dashed #010101;
+    padding:3%;
+    margin-bottom: 5%;
+    font-family: "amatic bold";
+    color : #079992;
+}
+
+#maCommande form {
+    display : block;
+    text-align : center;
+    margin-top:auto;
+    margin-right: auto;
+    margin-top :5%;
+    text-decoration: none;
+}
+
+#maCommande button{
+    display : block;
+    font-size: 1.5rem;
+    margin : 3%;
+    text-align : right;
+    text-decoration: none;
+}
+
+#maCommande a, 
+#maCommande a:visited {
+    color :#010101;
+    text-decoration: none;
+}
+
+.confirmation_commande {
+    color: #079992;
+    font-size: 2.5rem;
+    font-family: "amatic bold";
+    text-align :center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5%;
+    margin: 2%;
+}
+
+.apres_commande {
+    font-size: 2rem;
+    font-family: "amatic bold";
+    text-align :center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5%;
+    margin: 2%;
+}
+
+
+
+#maCommande h4 {
+    text-align : center;
+    color :#079992;
+    padding: 1%;
+
+}
+
+#maCommande h6 {
+    text-align :right;
+    padding-top : 1%;
+    padding-bottom :1%;
+    text-decoration : underline;
+    width: 95%;
+}
+
+
+
+
+
+/*FIN PAGE PANIERS...........................................*/
+/*............................................................*/
+/*............................................................*/
+
+
+/*PAGE ESPACE COMMUNAUTÉ VERSION MOBILE*/
+/*............................................................*/
+/*............................................................*/
+
+#communaute {
+    background-color: #fdf0e3;
+}
+
+#instructionsCom,
+.text-annonces {
+    text-align : justify;
+    padding :20px;
+}
+
+.article {
+    border : 1px dashed #010101;
+    border-radius: 5px;
+    padding: 15px 15px 15px 15px;
+    margin-bottom: 10px;
+    font-family: "lato regular";
+    text-align: center;
+}
+
+.titres-articles {
+    border: 1px solid #010101;
+    background-color: #079992;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 30% 5px 30%;
+}
+
+
+
+#annoncesCom {
+    padding: 10px 5px 120px 5px;
+    text-align: center;
+}
+
+.text-annonces {
+    width: 88%;
+    height: 100px;
+    position: absolute;
+    font-family: "lato bold";
+    background-color: #fdf0e3;
+}
+
+.article p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.article #avert {
+    font-family: "lato bold";
+    margin-top : 15px;
+}
+
+.article #signaturePP {
+    color: #079992;
+    font-family: "lato bold";
+    text-align : center;
+}
+
+#communaute a {
+	text-decoration: none;
+}
+
+#communaute img {
+	vertical-align: middle;
+}
+
+/* Conteneur principal des blocs de la page */
+#chat-block {
+	width: 100%;
+	margin: 50px auto;
+	padding: 2px 20px 20px 20px;
+    background-color: #fdf0e3;
+    font-family: "lato regular";
+}
+
+/* Bloc contenant la zone de texte et bouton */
+.post-message  {
+	width: 95%;
+    background-color: #fdf0e3;
+    margin: auto;
+	padding: 3px;
+}
+
+/* Zone de texte */
+.post-message #message {
+	width: 100%;
+}
+
+/* Bouton d'envoi */
+.post-message #post {
+    width: 25%;
+    display: block;
+    margin: 5px auto;
+}
+
+/* La zone où sont affichés les messages
+et utilisateurs connectés */
+.chat {
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #d2d2d2;
+	padding: 0px;
+}
+
+/* Bloc de chargement */
+.chat #loading {
+	margin-top: 50px;
+}
+
+/* Annonce */
+.chat #annonce {
+	background: #f8fafd;
+	margin: -6px -7px 5px -7px;
+	padding: 5px;
+	height:20px;
+	box-shadow: 8px 8px 12px #aaa;
+	-webkit-box-shadow: 0px 8px 15px #aaa;
+}
+
+/* Zone des messages */
+.chat #text-td {
+	margin: 0px; 
+	padding: 5px; 
+	width: 80%; 
+	background: #fff; 
+}
+
+/* Zone des utilisateurs connectés */
+.chat #users-td, 
+.chat #users-chat-td {
+	margin: 0px; 
+	padding: 5px; 
+	width: 20%; 
+	background: #ddd;
+}
+
+.chat #text, .chat #users, 
+.chat #users-chat {
+	height:300px; 
+	overflow-y: auto;
+}
+
+/* Modification du statut */
+.status {
+	width: 95%;
+	border: none;
+	background: #fdf0e3;
+    margin: auto;
+	text-align: right;
+}
+
+.info {
+	color: green;
+}
+
+#loading{
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+/*FIN PAGE ESPACE COMMUNAUTÉ...................................*/
+/*............................................................*/
+/*............................................................*/
+
+
+/*PAGE CONTACT VERSION MOBILE*/
+/*............................................................*/
+/*............................................................*/
+
+#contact div {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "lato regular";
+}
+
+#contact h2 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+.form-contact {
+    text-align: center;
+    font-family: "lato regular";
+    width: 100%;
+    padding: 10px;
+    margin-top: -15px;
+}
+
+.form-contact td {
+    display: block;
+    list-style: none;
+    margin: 5px;
+}
+
+.form-contact .required {
+    color:red;
+  }
+
+.form-contact .field-textarea {
+    width: 250px;
+    height: 150px;
+}
+
+.form-contact input::placeholder {
+    font-family: 'lato italic';
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #7d7f7d;
+    text-align: left;
+}
+
+.form-contact #btnEnvoyer,
+.form-contact #btnReinitial {
+    color: #fdf0e3;
+    background-color: #079992;
+    border: 1px solid #7d7f7d;
+    border-radius: 10px 10px / 5px 5px;
+    font-family: "Amatic regular";
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+#erreurCtc {
+    font-family: "Amatic regular";
+    text-align: center;
+    background-color: red;
+    color : white;
+    font-size: 2rem;
+    margin: 0 30% 10px 30%;
+}
+
+#adresse h2 {
+    margin-bottom: 10px;
+}
+
+.map-responsive {
+    overflow:hidden;
+    margin: 10px;
+    padding-bottom:56.25%;
+    position:relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+/*FIN PAGE CONTACT...........................................*/
+/*............................................................*/
+/*............................................................*/
+
+/*PAGE MENTIONS LEGALES VERSION MOBILE*/
+/*............................................................*/
+/*............................................................*/
+
+#mentions {
+    background-color:#fdf0e3;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color : #010101;
+    line-height :1.2;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+#mentions p ul {
+    font-family: "lato regular" ;
+}
+
+#mentions a {
+    text-decoration: none;
+}
+
+#mentions a:hover {
+    color: #079992;
+}
+
+#mentions a:visited {
+    color: #7d7f7d;
+    text-decoration: none;
+}
+
+#mentions #divh2 {
+    margin: 15px 15px 15px 15px;
+}
+
+#mentions h2 {
+    font-size: 3.5rem;
+}
+
+#mentions h3 {
+    font-size: 3rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#mentions h4 {
+    font-size: 2rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    margin-top: 5% ;
+    margin-bottom: 5%;
+}
+
+/* apparition au click en JS*/
+.contenu1 {
+    display: none;
+}
+
+.contenu2 {
+    display: none;
+}
+
+.contenu3 {
+    display: none;
+}
+
+
+
+/*FIN PAGE MENTION LEGALES*/
+/*............................................................*/
+/*............................................................*/
+
+
+/*FOOTER VERSION MOBILE*/
+/*............................................................*/
+/*............................................................*/
+
+#footer {
+    background-color:#079992;
+    color: #fcfcfc;
+    padding: 1%;
+    line-height :1.2;
+}
+
+/*newsletter*/
+
+#footer .newsletter {
+    display: block;
+    text-align: center;
+    margin-top: 2%;
+}
+
+#footer small {
+    color: #fcfcfc;
+    font-family: "lato regular";
+    font-size : 0.8rem;
+    text-decoration: none;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer input {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 1px solid #7d7f7d;
+    border-radius: 3px;
+    height: 25px;
+}
+
+#footer input::placeholder {
+    font-family: "lato italic";
+    font-size: 0.8rem ;
+    color: #7d7f7d ;
+}
+
+
+#footer input[type="submit"] {
+    margin-top: 15px;
+    font-size:0.8rem;
+}
+
+
+/*nav footer*/
+
+#footer nav {
+   text-align :center;
+}
+
+#footer nav a {
+    display:block;
+    text-align: center;
+    font-family: "amatic bold";
+    font-size: 1.2rem;
+    color: #fcfcfc;
+    text-decoration: none;
+    line-height :1.5;
+    padding: 1%;
+}
+
+#footer nav a:visited {
+    text-decoration: none;
+    color: #fcfcfc;
+}
+
+/*RS*/
+
+#footer .reseaux {
+    display : inline-block;
+    text-align: center;
+    margin-top: 2%;
+}
+
+#footer i {  
+    color : #fcfcfc;
+    padding-left: 3%;
+    padding-right: 3%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*crédits*/
+
+#footer #credits {
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "amatic bold" ;
+    font-size: 1.3rem;
+    color: #fcfcfc;
+}
+
+ #credits {
+    text-align: center;
+    margin-left: auto;
+    margin-right :auto;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-top: 9%;
+}
+
+/*FIN FOOTER...................................................*/
+/*............................................................*/
+/*............................................................*/
+
+
+
+
+
+
+/*MEDIA QUERIES...............................................*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+
+
+/* A PARTIR DE LA VERSION TABLETTE...............................*/
+
+@media screen and (min-width: 768px) { 
+
+    /*HEADER VERSION TABLETTE***/
+
+    #header #menuHamburger {
+        display : none;
+    }
+
+    #header #navHeader {
+        display:block;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top : 3%;
+    }
+
+    #header #connexion {
+        display : block;
+    }
+   
+    #header .infoscompte {
+        margin-left: 0;
+        margin-right: 0;
+        text-align : right;  
+    }
+
+    #header input {
+        max-width: 90%;  
+        text-align: right;
+        margin-right: 0;
+        margin-left :auto;
+    }
+
+    #header h5 {
+        text-align :right;
+    }
+
+    #header input::placeholder {
+        text-align: right;
+    }
+
+
+    /*CONCEPT VERSION TABLETTE***/
+    /*modal Newsletter CTA VERSION TABLETTE*/
+
+    #modalNL {
+        max-width: 20%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 280px;
+    }
+
+    /*PANIERS VERSION TABLETTE***/
+
+    .paniers {
+        text-align: center;
+        margin-left: auto;
+        margin-right:auto;
+        overflow-wrap: break-word;
+    }
+
+    #aside .vignetteachat {
+        display: inline-block;
+        border-radius: 5px;
+        margin-right: 2px; 
+        max-width :60%;
+    }
+
+
+
+    /*COMMANDE VERSION TABLETTE***/
+
+    #maCommande th { 
+        border-bottom: 2px dashed #010101;
+        font-size : 2rem;
+    }
+    
+    #maCommande td {
+        padding:3%;
+        font-family :"lato regular";
+        font-size :1.5rem;
+    }
+    
+    #maCommande table tfoot td {
+        border-top :  2px dashed #010101;
+        border-bottom:  2px dashed #010101;
+        font-size :2rem;
+    }
+    
+    #maCommande form {
+        text-align : right;
+        margin-top:0;
+        margin-right:0;
+        margin-bottom:2%;
+    }
+    
+
+
+
+
+    /*COMMUNAUTÉ VERSION TABLETTE***/
+    
+    #annoncesCom{
+        padding: 10px 5px 100px 5px;
+        text-align: center;
+    }
+
+    .text-annonces{
+        width: 88%;
+    }
+
+    /* Bouton d'envoi */
+    .post-message #post {
+        width: 10%;
+        margin: 5px auto;
+        padding: 5px;
+    }
+     
+    /* Zone des utilisateurs connectés */
+    .chat #text, .chat #users, .chat #users-chat {
+        height:500px; 
+        overflow-y: auto;
+    }
+
+    #loading{
+        margin-left: 35%;
+        margin-right: 35%;
+        text-align: center;
+    }
+
+
+    /*CONTACT VERSION TABLETTE***/
+    
+    .map-responsive{
+        overflow:hidden;
+        padding-bottom:56.25%;
+        position:relative;
+        width: 600px;
+        height: 350px;
+    }
+
+    .map-responsive iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+    }
+
+    
+    
+    /*MENTIONS LÉGALES VERSION TABLETTE***/
+
+    #mentions h4 {
+        text-align: left;
+    }
+
+
+
+    /*FOOTER VERSION TABLETTE***/
+
+    #footer .newsletter {
+        text-align: left;
+    }
+
+    #footer nav {
+        padding-top : 4%;
+    }
+
+    #footer .reseaux {
+        text-align: right;
+    }
+
+    #footer input {
+        max-width: 90%;
+    }
+    
+    #index .presentation {
+        margin-top: 170px;
+    }
+
+    #footer button {
+        display : block;    
+        align-items: flex-start;
+        margin: 3px;
+    }
+
+    #credits {
+        padding-top: 2%;
+    }
+
+
+}
+
+/*FIN VERSION TABLETTE........................................*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+
+
+
+
+/* A PARTIR DE LA VERSION ORDI..........................................*/
+
+@media screen and (min-width: 992px) {
+
+    /*HEADER VERSION ORDI*/
+
+    #header nav {
+        text-align : center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top :10%;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    #header nav a {
+        display: inline-block;
+        text-align : center;
+        padding-top :0%;
+        padding-left :5%;
+    }
+
+
+    /*CONCEPT VERSION ORDI*/
+    /*modal Newsletter CTA VERSION PC***/
+
+    #modalNL {
+        max-width: 20%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 300px;
+    }
+
+
+    /*MON COMPTE VERSION ORDI*/
+
+    #compte #form2 input {
+        width: 40%;
+    }
+    
+    #compte #form1 input {
+        width: 40%;
+    }
+
+
+/*COMMUNAUTÉ VERSION ORDI*/
+    
+    #annoncesCom{
+        padding: 10px 5px 110px 5px;
+        text-align: center;
+    }
+    
+    .text-annonces{
+        width: 91%;
+    }
+
+    /* Bouton d'envoi */
+    .post-message #post {
+        width: 10%;
+        margin: 5px auto;
+        padding: 5px;
+    }
+     
+    /* Zone des utilisateurs connectés */
+    .chat #text, .chat #users, .chat #users-chat {
+        height:500px; 
+        overflow-y: auto;
+    }
+
+    #loading{
+        margin-left: 35%;
+        margin-right: 35%;
+        text-align: center;
+    }
+    
+/*CONTACT VERSION ORDI*/
+    
+    .map-responsive{
+        overflow:hidden;
+        padding-bottom:56.25%;
+        position:relative;
+        width: 800px;
+        height: 500px;
+    }
+
+    .map-responsive iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+    }
+
+
+
+    /*FOOTER VERSION ORDI*/
+
+    #footer nav {
+        text-align: center; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #footer nav a {
+        display:inline-block;
+        padding-left :5%;
+    }
+
+    /*FORM VERSION ORDI*/
+    #compte #form2 select,
+    #compte #form2 #start {
+        width:40%;
+    }   
+
+
+}
+/*FIN VERSION ORDI  ........................................*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/
+/*............................................................*/

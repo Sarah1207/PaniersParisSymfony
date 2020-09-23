@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Paniers du mois {% endblock %}
+
+
+
+{% block body %}
+
+    <main>
+
+        <div>
+            <br>
+            <br>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                {# CHAPO #}
+                <div id="titre" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                    <h2> {{ titre }}</h2>
+                    <p class="chapo"> Concoctez vos plats avec nos produits frais de saison. Plus la peine de courir :
+                        on vous facilite le quotidien!</p>
+                </div>
+            </div>
+
+            <div class="row">
+
+                {# PANIER 1 #}
+                <div class=" paniers col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+
+                    <figure id="figure1">
+
+                        <img class="imgpanier" src="{{ asset('assets/img/paniers.jpg') }}" alt="Panier Léger">
+
+                        <figcaption>
+                            <h3> {{ panierleger.nomPanier }}</h3>
+                            <p><b> {{ panierleger.descriptionPanier }}</b></p>
+
+                            <p id="ensavoirplus1"><b>En savoir plus</b> &nbsp;<i class="far fa-plus-square"></i></p>
+                            {# Accordéon display:none / display avec JS #}
+
+                            <p id="descriptionpanier1"><b> <u>Composition : </u></b> <br>
+                                {{ panierleger.composition }}
+                            </p>
+
+                            <p class="prixpanier"> {{ panierleger.prixPanier }} &euro;</p>
+
+                            <div class="quantitepanier">
+                                <label for="quantite1">Choisissez la quantité</label>
+                                <select name="quantite1" id="quantite1">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" id="ajoutCommande1"><a
+                                        href="{{ path('commande_add',{id:panierleger.id}) }}"> Ajouter à Ma Commande </a>
+                            </button>
+
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+                {# PANIER 2 #}
+                <div class="paniers col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <figure id="figure2">
+
+                        <img class="imgpanier" src="{{ asset('assets/img/paniers.jpg') }}" alt="Panier Duo">
+
+                        <figcaption>
+                            <h3>{{ panierduo.nomPanier }}</h3>
+                            <p><b> {{ panierduo.descriptionPanier }}</b></p>
+
+                            <p id="ensavoirplus2"><b>En savoir plus</b> &nbsp;<i class="far fa-plus-square"></i></p>
+                            {# Accordéon display:none / display avec JS #}
+
+                            <p id="descriptionpanier2"><b> <u>Composition : </u></b> <br>
+                                {{ panierduo.composition }} </p>
+
+                            <p class="prixpanier"> {{ panierduo.prixPanier }} &euro;</p>
+
+                            <div class="quantitepanier">
+                                <label for="quantite2">Choisissez la quantité</label>
+                                <select name="quantite2" id="quantite2">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" id="ajoutCommande2"><a
+                                        href="{{ path('commande_add',{id:panierduo.id}) }}">Ajouter à Ma Commande </a>
+                            </button>
+
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+
+                {# PANIER  3 #}
+                <div class="paniers col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+
+                    <figure id="figure3">
+
+                        <img class="imgpanier" src="{{ asset('assets/img/paniers.jpg') }}" alt="Panier Big">
+
+                        <figcaption>
+                            <h3> {{ panierbig.nomPanier }} </h3>
+                            <p><b> {{ panierbig.descriptionPanier }}</b></p>
+
+                            <p id="ensavoirplus3"><b>En savoir plus</b> &nbsp;<i class="far fa-plus-square"></i></p>
+                            {# Accordéon display:none / display avec JS #}
+
+                            <p id="descriptionpanier3"><b> <u>Composition : </u></b> <br>
+                                {{ panierbig.composition }} </p>
+
+                            <p class="prixpanier"> {{ panierbig.prixPanier }} &euro;</p>
+
+
+                            <div class="quantitepanier">
+                                <label for="quantite3"> <b>Choisissez la quantité</b></label>
+                                <select name="quantite3" id="quantite3">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" id="ajoutCommande3"><a
+                                        href="{{ path('commande_add',{id:panierbig.id}) }}">Ajouter à Ma Commande </a>
+                            </button>
+
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="row">
+                {# MODAL AFFICHAGE JS #}
+                <div id="alertAjoutPanier" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                    <p>Votre sélection a été ajoutée à votre commande</p>
+                    <i id="closeAlertAjoutPanier" class="fas fa-window-close"></i>
+                </div>
+                {# FIN MODAL AFFICHAGE JS #}
+            </div>
+
+        </div>
+
+    </main>
+
+{% endblock %}
