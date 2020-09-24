@@ -43,13 +43,13 @@
 
                                     <tbody>
                                     {% for item in items %}
-                                    <tr>
-                                        <td> {{ item.article.nomPanier }}</td>
-                                        <td> {{ item.quantite }} </td>
-                                        <td> {{ item.article.prixPanier }} &euro;</td>
-                                        <td> {{ item.article.prixPanier * item.quantite}} &euro;</td>
-                                        <td> <a href="{{ path('commande_delete',{id:item.article.id}) }}"> <i class="fas fa-trash-alt"> </i> </a> </td>
-                                    </tr>
+                                        <tr>
+                                            <td> {{ item.article.nomPanier }}</td>
+                                            <td> {{ item.quantite }} </td>
+                                            <td> {{ item.article.prixPanier }} &euro;</td>
+                                            <td> {{ item.article.prixPanier * item.quantite}} &euro;</td>
+                                            <td> <a href="{{ path('commande_delete',{id:item.article.id}) }}"> <i class="fas fa-trash-alt"> </i> </a> </td>
+                                        </tr>
                                     {% endfor %}
                                     </tbody>
 

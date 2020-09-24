@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <!-- CONTACT--------------------------------------------------------------------------->
+    <main>
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h2>Nous contacter ?</h2>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                        <form action="" id="formCtc">
+
+                            <table class="form-contact">
+
+                                <tr>
+                                    <td>
+                                        <label for="nomCtc">Votre nom<span class="required">*</span></label>
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Tapez votre nom" id="nomCtc">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label for="emailCtc">Votre e-mail<span class="required">*</span></label>
+                                    </td>
+                                    <td>
+                                        <input type="email" placeholder="Tapez votre adresse email" id="emailCtc">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label for="comCtc">Commentaire<span class="required">*</span></label>
+                                    </td>
+                                    <td>
+                                        <textarea name="Commentaire" id ="comCtc" class="long field-textarea"></textarea>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button type="submit" value="Envoyer" id="btnEnvoyer">Envoyer</button>
+                                        <button type="reset" value="Réinitialiser" id="btnReinitial">Réinitialiser</button>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </form>
+
+                        <!--affichage avec JS-->
+                        <p id="erreurCtc"> </p>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                        <section id="adresse">
+                            <h2>Où nous trouver ?</h2>
+
+                            <p>
+              <span>
+               Adresse : 63 rue de la Verrerie, 75004 Paris
+              </span>
+                            </p>
+
+                            <p>
+              <span>
+              Téléphone : +33 1 22 33  44
+              </span>
+                            </p>
+
+                            <p>
+              <span>
+              Télécopie : +33 1 22 33 44 55
+              </span>
+                            </p>
+
+                            <p>
+                <span>
+                Contact équipe : <a href="mailto:ppcontact@paniers-paris.com">ppcontact@paniers-paris.com</a>
+                </span>
+                            </p>
+
+                            <div class="map-responsive">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10500.052022249629!2d2.3436832019887484!3d48.85796238786383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1da55fe3fb%3A0x460248558f32727f!2s63%20Rue%20de%20la%20Verrerie%2C%2075004%20Paris!5e0!3m2!1sfr!2sfr!4v1595591658872!5m2!1sfr!2sfr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </div class="map-responsive">
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <!-- FIN CONTACT-->
+{% endblock %}
