@@ -58,7 +58,7 @@
                         {% else %}
                             <h5> <i class="fas fa-user-alt"> </i> <a href="{{ path('user',{id: app.user.id}) }}"> {{ app.user.pseudo }} </a></h5>
                             <button><a href="{{ path('user',{id: app.user.id}) }}"> Profil </a></button>
-                            <button><a href="{{ path('app_logout') }}"> Se déconnecter </a></button>
+                            <button><a href="{{ path('app_logout') }}"> Se déconnecter </a></button><br><br>
                         {% endif %}
 
 
