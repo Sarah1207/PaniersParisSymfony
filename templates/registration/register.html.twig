@@ -13,7 +13,7 @@
     {{ form_start(registrationForm) }}
 
 
-    {{ form_row(registrationForm.pseudo, {label: 'Pseudo : '}) }}
+    {{ form_row(registrationForm.pseudo, {'attr': {'placeholder': "Saisissez un pseudo" }}) }}
     {{ form_row(registrationForm.nom, {label: 'Nom : '}) }}
     {{ form_row(registrationForm.prenom, {label: 'Prénom : '}) }}
     {{ form_row(registrationForm.dob, {label: 'Date de naissance :'}) }}
