@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} Paniers Paris {% endblock %}</title>
@@ -9,7 +7,6 @@
     {% block stylesheets %}
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"/>
-
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-grid.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
@@ -26,7 +23,7 @@
 
             {# LOGO #}
             <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-                <a href="index.html"> <img src="{{ asset('assets/img/Logo_blanc.png') }}" alt="Logo Paniers Paris" id="logo"/> </a>
+                <a href="{{ path('index') }}"> <img src="{{ asset('assets/img/Logo_blanc.png') }}" alt="Logo Paniers Paris" id="logo"/> </a>
             </div>
 
             {# HAMBURGER POUR VERSION MOBILE #}
@@ -37,31 +34,41 @@
             {# NAV #}
             <div class="nav col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                 <nav id="navHeader" class="text-center text-nowrap">
-                    <a href="index.html"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Concept</a>
+                    <a href="{{ path('index') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Concept</a>
                     <a href="{{ path('paniers') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Paniers du
                         mois</a>
                     <a href="{{ path('commande') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Ma Commande </a>
                 </nav>
             </div>
 
-            {# SE CONNECTER/ CREER COMPTE/MA COMMANDE #}
+            {# SE CONNECTER/ CREER UN COMPTE/MA COMMANDE #}
             <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                <div id="connexion" class="infoscompte">
-                    <h5>
-                        <i class="fas fa-user-alt"></i>
-                        <a href="compte.html">&nbsp; Mon compte </a>
-                    </h5>
 
+                <div id="connexion" class="infoscompte">
+
+
+                    {% if not app.user %}
                     <form action="" method="POST">
-                        <input type="email" name="email_header" placeholder="Votre email"/>
-                        <input type="password" name="password_header" placeholder="Votre mot de passe"/>
-                        <input type="submit" name="connexion_header" value="Se connecter"/>
-                        <input type="submit" name="creer_compte_header" value="Créer un compte"/>
+                        <h5> <i class="fas fa-user-alt"> </i>  <a href="compte.html">&nbsp; Mon compte </a></h5>
+                        <input type="text" name="pseudo" placeholder="Votre pseudo">
+                        <input type="password" name="password" placeholder="Votre mot de passe">
+                        <button><a href="{{ path('app_register') }}"> Inscription </a></button>
+                        <button><a href="{{ path('app_login') }}"> Connexion </a></button>
+
+                        {% else %}
+                            <h5> <i class="fas fa-user-alt"> </i> <a href="{{ path('user',{id: app.user.id}) }}"> {{ app.user.pseudo }} </a></h5>
+                            <button><a href="{{ path('user',{id: app.user.id}) }}"> Profil </a></button>
+                            <button><a href="{{ path('app_logout') }}"> Se déconnecter </a></button><br><br>
+                        {% endif %}
+
+
+
                     </form>
 
-                    <span> <a href="compte.html"><small>Mot de passe oublié ? <br/> Cliquez ici</small></a> </span>
+                    <span><a href="compte.html"><small>Mot de passe oublié ? <br> Cliquez ici</small></a> </span>
 
-                    <h5><a href="{{ path('commande') }}"><i class="fas fa-shopping-basket"> </i> &nbsp; Ma commande</a></h5>
+                    <h5> <a href="{{ path('commande') }}""><i class="fas fa-shopping-basket"> </i> &nbsp; Ma commande </a> </h5>
+
                 </div>
 
             </div>
@@ -101,10 +108,17 @@
             {# NAV #}
             <div class="navfooter col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <nav>
+<<<<<<< Updated upstream
                     <a href="compte.html"><img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Se connecter</a>
                     <a href="compte.html"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Créer un compte</a>
                     <a href="{{ path('contact') }}"><img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Nous contacter</a>
                     <a href="{{ path('mentions') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/>Mentions
+=======
+
+                    <a href="{{ path('app_register') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Créer un compte</a>
+                    <a href="contact.html"><img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Nous contacter</a>
+                    <a href="mentions_legales.html"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/>Mentions
+>>>>>>> Stashed changes
                         légales</a>
                 </nav>
             </div>
