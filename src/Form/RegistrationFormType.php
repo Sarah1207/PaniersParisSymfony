@@ -21,21 +21,38 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('pseudo',TextType::class,[
+                'label' => 'Pseudo : ',
             ])
-            ->add('prenom',TextType::class)
-            ->add('nom',TextType::class)
-            ->add('tel',TextType::class)
-            ->add('dob',TextType::class)
-            ->add('adresse',TextType::class)
-            ->add('ville',TextType::class)
-            ->add('cp',IntegerType::class)
-            ->add('email',EmailType::class)
+            ->add('prenom',TextType::class,[
+            'label' => 'Prenom : ',
+            ])
+            ->add('nom',TextType::class, [
+                'label' => 'Nom : ',
+            ])
+            ->add('tel',TextType::class, [
+                'label' => 'Téléphone : ',
+            ])
+            ->add('dob',TextType::class, [
+                'label' => 'Date de naissance : ',
+            ])
+            ->add('adresse',TextType::class, [
+                'label' => 'Adresse :',
+            ])
+            ->add('ville',TextType::class, [
+                'label' => 'Ville : ',
+            ])
+            ->add('cp',IntegerType::class, [
+                'label' => 'Code postal : ',
+            ])
+            ->add('email',EmailType::class, [
+                'label' => 'Adresse email : ',
+            ])
 
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Veuillez accepter les conditions générales.',
                     ]),
                 ],
             ])
@@ -45,11 +62,11 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Saisissez un mot de passe',
                     ]),
                     new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'min' => 8,
+                        'minMessage' => 'Votre mot de passe doit faire au minimum 8 caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

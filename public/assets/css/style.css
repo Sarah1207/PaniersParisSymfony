@@ -54,7 +54,6 @@
 
 main {
     background-color:#fdf0e3;
-    padding-bottom: 2%;
     color : #010101;
     line-height :1.2;
 }
@@ -469,96 +468,73 @@ input[type="submit"] {
     text-decoration: underline;
 }
 
-#compte #form1,
-#compte #form2 {
+#compte #form1
+{
     border: 2px dashed black;
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
-    margin-top: 50px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
     font-family: "Amatic Regular";
 }
 
-#compte #coordonnees {
-    text-align:center;
-    font-family: "amatic bold";
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 2rem;
-}
+#compte #inscription{
 
-#compte #champs {
-    text-align:left;
+    border-radius:3px;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    padding-top :1%;
+    padding-bottom :5%;
+    background-color: #c4c9c7;
+    color: #010101;
+    font-size: 1.2rem;
     font-family: "amatic bold";
-    font-size: 0.7rem;
+    font-weight: bold;
+    font-style: normal;
+    margin-top: 40px;
+}
+#inscription:hover{
+    cursor: pointer;
+}
+.form-check-label{
+    font-size: 5rem;
 }
 
 #compte label {
     display: inline-block;
     width: 250px;
     text-align: left;
-    font-size: 1.6rem;
+    font-size: 2rem;
+}
+#compte placeholder{
+    font-size: 1.8rem;
 }
 
-#compte #form1 input,
-#compte #form2 input {
+#compte input{
     display: inline-block;
     width: 100%;
     border-radius: 3px;
     border: 1px solid #7d7f7d;
     height: 30px;
-    margin-bottom : 5px;
+    margin-bottom : 10px;
     padding-inline-start: 0px;
-}
 
-#compte #form2 select,
-#compte #form2 #start {
-    display: inline-block;
-    align-items:flex-start;
-    width: 100%;
-    border-radius: 3px;
-    border: 1px solid #7d7f7d;
-    height: 30px;
-    align-items: left;
-    margin : 0;
-    margin-bottom : 5px;
-    padding-inline-start: 0px;
-}
-
-#compte #form2 option,
-#compte #form2 #start {
-    font-family: 'lato regular';
-    font-size: 0.9rem;
-    color: #7d7f7d;
-    text-align: left;
-}
-
-#compte #p1, 
-#compte #p2 {
-    text-align: center;
-    background-color: red;
-    color : white;
-    font-size: 1.5rem;
-    margin-bottom: 40px;
 }
 
 #compte input::placeholder {
     font-family: 'lato italic';
     font-style: italic;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #7d7f7d;
     text-align: left;
 }
 
-#form1 button,
-#form2 button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align :center;
-    font-family:"amatic bold";
-    font-size:2rem;
-}   
+
 
 /* FIN COMPTE VERSION MOBILE.............................*/
 /*............................................................*/
@@ -1207,6 +1183,7 @@ et utilisateurs connectés */
     color: #fcfcfc;
     padding: 1%;
     line-height :1.2;
+
 }
 
 /*newsletter*/

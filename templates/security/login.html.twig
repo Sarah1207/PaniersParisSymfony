@@ -9,14 +9,19 @@
 {% if error %}
     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
+    {% block form2 %}
+<main>
+    <div class="compte2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12>
+                    <div id="form2">
 
-
-
-{% if app.user %}
+    {#  {% if app.user %}
     <div class="mb-3">
         You are logged in as {{ app.user.pseudo}}, <a href="{{ path('app_logout') }}">Logout</a>
     </div>
-{% endif %}
+{% endif %}#}
 
 
 
@@ -29,7 +34,7 @@
 <input type="hidden" name="_csrf_token"
        value="{{ csrf_token('authenticate') }}"
 >
-
+                {% endblock %}
 {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
@@ -45,4 +50,12 @@
         Connexion
     </button>
 </form>
+     </div>
+     </div>
+    </div>
+    </div>
+     </div>
+    </main>
 {% endblock %}
+
+

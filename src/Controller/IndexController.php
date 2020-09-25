@@ -21,7 +21,6 @@ class IndexController extends AbstractController
             'user' => $user,
 
         ]);
-        dd($user);
     }
 
     /**
