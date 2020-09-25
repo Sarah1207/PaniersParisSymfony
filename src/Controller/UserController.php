@@ -14,10 +14,18 @@ class UserController extends AbstractController
     /**
      * @Route("/user/{id}", name="user")
      */
-    public function index(User $user)
+    public function index($id, UserRepository $userRepository)
     {
+        //$pdo->query('SELECT * FROM user WHERE id = :id')->fetch()
+        $user = $userRepository->find($id);
+        if($user === null){
+            // Pas d'utilisateur : erreur 404
+            throw $this->createNotFoundException('Aucun utilisateur trouvé');
+        }
+
         return $this->render('user/profile.html.twig', [
             'user' => $user,
         ]);
     }
 }
+
