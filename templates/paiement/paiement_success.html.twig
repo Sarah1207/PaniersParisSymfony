@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Confirmation commande {% endblock %}
+
+
+
+{% block body %}
+
+
+    <main>
+        <div class="container">
+
+            <div class="row">
+
+                <div>
+                    <br/>
+                    <br/>
+                </div>
+
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                    <h2><i class="fas fa-check"> </i> &nbsp; Confirmation de commande </h2>
+
+
+                    <p class='confirmation_commande'>
+                        <i class='far fa-check-square'> </i> &nbsp;
+                        Votre commande a bien été enregistrée.
+                        <br>
+                        Nous vous invitons à retirer vos achats dans notre boutique à l'accueil Click & Collect.
+                        <br> <br>
+                        <i class='fas fa-exclamation'></i> &nbsp; <u> Référence commande : </u> [...]
+                    </p>
+
+
+                    <p class='apres_commande'>
+                        <i class='fas fa-long-arrow-alt-right'></i> &nbsp; <a href='contact.php'> Voir l'adresse Click &
+                            Collect</a>
+                        <br>
+                        <i class='fas fa-long-arrow-alt-right'></i> &nbsp; <a href="{{ path('paniers') }}"> Nouvelle
+                            commande </a>
+                        <br>
+                        <i class='fas fa-long-arrow-alt-right'></i> &nbsp; <a href='index.php'> Retour à l'accueil </a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Paiement {% endblock %}
+
+
+
+{% block body %}
+
+    <main>
+        <div class="container">
+
+            <div class="row">
+
+                <div>
+                    <br/>
+                    <br/>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+
+                    <h2><i class="fas fa-shopping-basket"></i> Paiement </h2>
+
+
+                    <form action="{{ path('paiement_success') }}" method="post" id="payment-form">
+                        <div>
+                            <label for="card-element"> <i class="far fa-credit-card"></i> Carte de crédit </label>
+                            <div id="card-element">
+                                <!-- A Stripe Element will be inserted here. -->
+                            </div>
+
+                            <!-- Used to display Element errors. -->
+                            <div id="card-errors" role="alert"></div>
+                        </div>
+
+                        <button> Payer</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{{ asset('assets/javascript/script_paiement.js') }}"></script>
+{% endblock %}
