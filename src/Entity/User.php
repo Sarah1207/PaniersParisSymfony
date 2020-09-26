@@ -6,6 +6,9 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -22,6 +25,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank()
      */
     private $pseudo;
 
@@ -33,46 +37,55 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\Length(min="8", minMessage="Votre mot de passe doit faire au minimum 8 caractères")
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank()
      */
     private $tel;
 
     /**
      * @ORM\Column(type="string", length=10)
+     * @Assert\NotBlank()
      */
     private $dob;
 
     /**
      * @ORM\Column(type="string", length=60)
+     * @Assert\NotBlank()
      */
     private $adresse;
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank()
      */
     private $ville;
 
     /**
      * @ORM\Column(type="integer", length=5)
+     * @Assert\NotBlank()
      */
     private $cp;
 
     /**
      * @ORM\Column(type="string", length=40)
+     * @Assert\Email()
      */
     private $email;
 
