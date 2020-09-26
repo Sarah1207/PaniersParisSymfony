@@ -9,7 +9,7 @@
     <div id="compte">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
             <input type="hidden" name="_csrf_token"
             value="{{ csrf_token('authenticate') }}"
             >
@@ -53,5 +53,5 @@
 {% for flashError in app.flashes('verify_email_error') %}
     <div class="alert alert-danger" role="alert">{{ flashError }}</div>
 {% endfor %}
-    <div id="footer"> </div>
+
 {% endblock %}

@@ -482,7 +482,7 @@ input[type="submit"] {
     font-family: "Amatic Regular";
 }
 
-#compte #inscription{
+#compte #inscription {
 
     border-radius:3px;
     border: none;
@@ -498,8 +498,16 @@ input[type="submit"] {
     font-style: normal;
     margin-top: 40px;
 }
-#inscription:hover{
+
+#compte #inscription a:hover{
+    color: white;
+}
+
+#compte #inscription:hover{
     cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+
 }
 .form-check-label{
     font-size: 5rem;
@@ -534,6 +542,92 @@ input[type="submit"] {
     text-align: left;
 }
 
+#login #form2{
+    border: 2px dashed black;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Amatic Regular";
+}
+
+#login #form2 label{
+    font-size: 2rem;
+}
+#login #form2 h1{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+#login #form2 input{
+    display : block;
+    text-align: center;
+    margin-right: auto;
+    margin-left :auto;
+    height: 25px;
+    width: 250px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid #7d7f7d;
+    border-radius: 3px;
+}
+
+#login #form2 input::placeholder {
+    font-family: "lato italic";
+    font-style: italic;
+    font-size: 1rem;
+    color: #7d7f7d;
+    text-align: center;
+}
+
+#profil #recapmembre{
+    border: 2px dashed black;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Amatic Regular";
+
+}
+
+#profil #recapmembre li{
+    list-style-type: none;
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+#profil h3{
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#profil a{
+    text-decoration: none;
+    color: black;
+}
+
+#profil button:hover{
+    cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+}
+
+#profil a:hover{
+    color: white;
+}
+
+#profil ul{
+    margin-bottom: 30px;
+}
 
 
 /* FIN COMPTE VERSION MOBILE.............................*/
