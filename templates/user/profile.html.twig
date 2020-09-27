@@ -3,32 +3,34 @@
 {% block title %}Profil de l'utilisateur {{ user.prenom }} {{ user.nom }}{% endblock %}
 
 {% block body %}
+
+
 <body id="profil">
-<main>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
-                <div id="recapmembre">
-    <h3>Bienvenue sur votre espace membre
-        {{ user.prenom }} {{ user.nom }}</h3>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                    <div id="recapmembre">
+                        <h3>Bienvenue sur votre espace membre {{ user.prenom }} {{ user.nom }}</h3>
 
-    <ul>
-        <li> <strong>Pseudo</strong> : {{ user.pseudo }}</li>
-        <li> <strong>Prénom</strong> : {{ user.prenom }}</li>
-        <li><strong>Nom</strong> : {{ user.nom }}</li>
-        <li><strong>Date de naissance</strong> : {{ user.dob }}</li>
-        <li><strong>Numéro de téléphone</strong> : {{ user.tel }}</li>
-        <li><strong>Adresse</strong> : {{ user.adresse }}</li>
-        <li><strong>Ville</strong> : {{ user.ville }}</li>
-        <li><strong>Code Postal</strong> :{{ user.cp }}</li>
-        <li><strong>Adresse email</strong> :{{ user.email }}</li>
-    </ul>
+                            <ul>
+                                <li> <strong>Pseudo</strong> : {{ user.pseudo }}</li>
+                                <li> <strong>Prénom</strong> : {{ user.prenom }}</li>
+                                <li><strong>Nom</strong> : {{ user.nom }}</li>
+                                <li><strong>Date de naissance</strong> : {{ user.dob }}</li>
+                                <li><strong>Numéro de téléphone</strong> : {{ user.tel }}</li>
+                                <li><strong>Adresse</strong> : {{ user.adresse }}</li>
+                                <li><strong>Ville</strong> : {{ user.ville }}</li>
+                                <li><strong>Code Postal</strong> :{{ user.cp }}</li>
+                                <li><strong>Adresse email</strong> :{{ user.email }}</li>
+                            </ul>
 
-    <button><a href="{{ path('index') }}">retour sur la page d'accueil</a></button>
+                                <button><a href="{{ path('index') }}">retour sur la page d'accueil</a></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 </body>
+
 {% endblock %}

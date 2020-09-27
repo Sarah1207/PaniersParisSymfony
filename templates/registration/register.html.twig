@@ -5,51 +5,58 @@
 {% block body %}
 
 <main>
-
     <div id="compte">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
-            <input type="hidden" name="_csrf_token"
-            value="{{ csrf_token('authenticate') }}"
-            >
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
 
-            {{ form_start(registrationForm) }}
-<div id="form1">
-
-        <h1>Nouveau client ?</h1>
-
-    <form action="{{ path('app_login') }}" method="POST">
-    {{ form_row(registrationForm.pseudo, {'attr': {'placeholder': "Saisissez un pseudo" }}) }}
-    {{ form_row(registrationForm.nom, {'attr': {'placeholder': "Saisissez votre nom" }})}}
-    {{ form_row(registrationForm.prenom, {'attr': {'placeholder': "Saisissez votre prénom" }}) }}
-    {{ form_row(registrationForm.dob, {'attr': {'placeholder': "JJ/MM/AAAA" }}) }}
-    {{ form_row(registrationForm.tel, {'attr': {'placeholder': "Saisissez votre n° de téléphone" }}) }}
-    {{ form_row(registrationForm.adresse, {'attr': {'placeholder': "Saisissez votre adresse" }}) }}
-    {{ form_row(registrationForm.ville, {'attr': {'placeholder': "Saisissez votre ville" }}) }}
-    {{ form_row(registrationForm.cp, {'attr': {'placeholder': "Saisissez votre code postal" }}) }}
-    {{ form_row(registrationForm.email, {'attr': {'placeholder': "Saisissez votre adresse email" }}) }}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 
+                    {{ form_start(registrationForm) }}
+                    <div id="form1">
 
-    {{ form_row(registrationForm.plainPassword, {label: 'Mot de passe : ', 'attr ': { value:""}}) }}
+                        <h1>Nouveau client ?</h1>
 
-     {{ form_row(registrationForm.agreeTerms, {label: 'J\'accepte les conditions d\'utilisation'}) }}
-            <input type="submit" id="inscription" value="Inscription">
-                {{ form_end(registrationForm) }}
+                            <form action="{{ path('app_login') }}" method="POST">
+                                {{ form_row(registrationForm.pseudo, {'attr': {'placeholder': "Saisissez un pseudo" }}) }}
+                                {{ form_row(registrationForm.nom, {'attr': {'placeholder': "Saisissez votre nom" }})}}
+                                {{ form_row(registrationForm.prenom, {'attr': {'placeholder': "Saisissez votre prénom" }}) }}
+                                {{ form_row(registrationForm.dob, {'attr': {'placeholder': "JJ/MM/AAAA" }}) }}
+                                {{ form_row(registrationForm.tel, {'attr': {'placeholder': "Saisissez votre n° de téléphone" }}) }}
+                                {{ form_row(registrationForm.adresse, {'attr': {'placeholder': "Saisissez votre adresse" }}) }}
+                                {{ form_row(registrationForm.ville, {'attr': {'placeholder': "Saisissez votre ville" }}) }}
+                                {{ form_row(registrationForm.cp, {'attr': {'placeholder': "Saisissez votre code postal" }}) }}
+                                {{ form_row(registrationForm.email, {'attr': {'placeholder': "Saisissez votre adresse email" }}) }}
 
-    </form>
 
+
+                                {{ form_row(registrationForm.plainPassword, {label: 'Mot de passe : ', 'attr ': { value:""}}) }}
+
+                                <div id="agree">
+                                {{ form_row(registrationForm.agreeTerms, {label: 'J\'accepte les conditions d\'utilisation'}) }}
+                                </div>
+
+
+                                <input type="submit" id="inscription" value="Inscription">
+                                {{ form_end(registrationForm) }}
+
+                            </form>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
-
-</div>
     </div>
-    </div>
-    </div
 </main>
 
 {% endblock %}
+
+
+
 {% block Error %}
+
 {% for flashError in app.flashes('verify_email_error') %}
     <div class="alert alert-danger" role="alert">{{ flashError }}</div>
 {% endfor %}
