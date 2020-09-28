@@ -249,15 +249,11 @@ input[type="submit"] {
     margin-right: auto;
     text-align :center;
     font-size:1rem;
+    cursor: pointer;
 }
 
 #header a {
     text-decoration : none;
-    color: #fcfcfc;
-}
-
-#header a:visited {
-    text-decoration: none;
     color: #fcfcfc;
 }
 
@@ -271,6 +267,25 @@ input[type="submit"] {
     margin-top: 2%;
     margin-bottom: 2%;
     padding: 2%;
+}
+
+#header .btnheader{
+    border-radius:3px;
+    border: none;
+    padding-right:1%;
+    padding-left:3%;
+    padding-top :1%;
+    padding-bottom :1%;
+    background-color: #c4c9c7;
+    font-size: 1rem;
+    font-family: "amatic bold";
+    font-style: normal;
+    margin-right: 2px;
+    color: black;
+}
+
+#header .btnheader a:hover{
+    cursor: pointer;
 }
 
 /*FIN HEADER..................................................*/
@@ -455,7 +470,7 @@ input[type="submit"] {
 
 
 
-/* COMPTE VERSION MOBILE.............................*/
+/* PAGE COMPTE VERSION MOBILE.............................*/
 /*............................................................*/
 /*............................................................*/
 
@@ -477,12 +492,12 @@ input[type="submit"] {
     margin-top: 80px;
     margin-bottom: 80px;
     padding-bottom: 50px;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     font-family: "Amatic Regular";
 }
 
-#compte #inscription{
+#compte #inscription {
 
     border-radius:3px;
     border: none;
@@ -498,11 +513,21 @@ input[type="submit"] {
     font-style: normal;
     margin-top: 40px;
 }
-#inscription:hover{
-    cursor: pointer;
+
+#compte #inscription a:hover{
+    color: white;
 }
-.form-check-label{
-    font-size: 5rem;
+
+#compte #inscription:hover{
+    cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+
+}
+#compte #form1 #agree label{
+    font-size: 1.2rem;
+    margin-top: 5%;
+    margin-right: 13%;
 }
 
 #compte label {
@@ -534,9 +559,144 @@ input[type="submit"] {
     text-align: left;
 }
 
+#compte #profil1 #agree{
+    font-size: 1.1rem;
+}
+/* FIN PAGE COMPTE VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
 
 
-/* FIN COMPTE VERSION MOBILE.............................*/
+
+
+/* PAGE LOGIN VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+#login #form2{
+    border: 2px dashed black;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Amatic Regular";
+}
+
+#login #form2 #connexion{
+    padding-bottom: 30px;
+    display: inline-block;
+    width: 40%;
+    border-radius: 3px;
+    border: 1px solid #7d7f7d;
+    height: 30px;
+    margin-bottom : 10px;
+    background-color: #c4c9c7;
+    color: #010101;
+    font-family: "amatic bold";
+    font-weight: bold;
+    border-radius:3px;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    padding-top :1%;
+
+}
+
+#login #form2 #connexion:hover{
+    cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+}
+
+#login #form2 label{
+    font-size: 2rem;
+}
+#login #form2 h1{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+#login #form2 input{
+    display : block;
+    text-align: center;
+    margin-right: auto;
+    margin-left :auto;
+    height: 25px;
+    width: 250px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid #7d7f7d;
+    border-radius: 3px;
+}
+
+#login #form2 input::placeholder {
+    font-family: "lato italic";
+    font-style: italic;
+    font-size: 1rem;
+    color: #7d7f7d;
+    text-align: center;
+}
+
+/* FIN PAGE LOGIN VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+
+
+/* PAGE PROFIL VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+#profil #recapmembre{
+    border: 2px dashed black;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Amatic Regular";
+
+}
+
+#profil #recapmembre li{
+    list-style-type: none;
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+#profil h3{
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#profil a{
+    text-decoration: none;
+    color: black;
+}
+
+#profil button:hover{
+    cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+}
+
+#profil a:hover{
+    color: white;
+}
+
+#profil ul{
+    margin-bottom: 30px;
+}
+
+/* FIN PAGE PROFIL VERSION MOBILE.............................*/
 /*............................................................*/
 /*............................................................*/
 
@@ -1577,7 +1737,7 @@ et utilisateurs connectés */
         margin: 5px auto;
         padding: 5px;
     }
-     
+
     /* Zone des utilisateurs connectés */
     .chat #text, .chat #users, .chat #users-chat {
         height:500px; 
@@ -1608,6 +1768,12 @@ et utilisateurs connectés */
         position:absolute;
     }
 
+/*INSCRIPTION VERSION ORDI*/
+
+    #compte #form1{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 
 
     /*FOOTER VERSION ORDI*/
