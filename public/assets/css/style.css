@@ -691,12 +691,34 @@ input[type="submit"] {
     font-style: normal;
 }
 
+#profil #delete a{
+    text-decoration: none;
+    color: black;
+    border-radius:3px;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    padding-top :1%;
+    padding-bottom :1%;
+    background-color: #c4c9c7;
+    font-size: 1.3rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+}
+
+#profil #delete a:hover{
+    color: white;
+    background-color:darkred;
+}
+
 
 #profil #returnAccueil:hover{
     cursor: pointer;
     background-color:#079992 ;
     color: white;
 }
+
 
 #profil #returnAccueil a:hover{
     color: white;
