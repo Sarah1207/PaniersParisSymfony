@@ -157,3 +157,10 @@
     </main>
 
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/javascript/script_paniersdumois1.js') }}"></script>
+    <script src="{{ asset('assets/javascript/script_paniersdumois2.js') }}"></script>
+    <script src="{{ asset('assets/javascript/script_paniersdumois3.js') }}"></script>
+
+{% endblock %}
