@@ -504,7 +504,7 @@ input[type="submit"] {
     padding-right:3%;
     padding-left:3%;
     padding-top :1%;
-    padding-bottom :5%;
+    padding-bottom :2%;
     background-color: #c4c9c7;
     color: #010101;
     font-size: 1.2rem;
@@ -548,7 +548,6 @@ input[type="submit"] {
     height: 30px;
     margin-bottom : 10px;
     padding-inline-start: 0px;
-
 }
 
 #compte input::placeholder {
@@ -603,7 +602,6 @@ input[type="submit"] {
     padding-right:3%;
     padding-left:3%;
     padding-top :1%;
-
 }
 
 #login #form2 #connexion:hover{
@@ -615,6 +613,7 @@ input[type="submit"] {
 #login #form2 label{
     font-size: 2rem;
 }
+
 #login #form2 h1{
     font-size: 3rem;
     font-weight: bold;
@@ -663,7 +662,6 @@ input[type="submit"] {
     margin-left: 20%;
     margin-right: 20%;
     font-family: "Amatic Regular";
-
 }
 
 #profil #recapmembre li{
@@ -677,19 +675,32 @@ input[type="submit"] {
     margin-bottom: 35px;
 }
 
-#profil a{
+#profil #returnAccueil a{
     text-decoration: none;
     color: black;
+    border-radius:3px;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    padding-top :1%;
+    padding-bottom :1%;
+    background-color: #c4c9c7;
+    font-size: 1.3rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
 }
 
-#profil button:hover{
+
+#profil #returnAccueil:hover{
     cursor: pointer;
     background-color:#079992 ;
     color: white;
 }
 
-#profil a:hover{
+#profil #returnAccueil a:hover{
     color: white;
+    background-color:#079992
 }
 
 #profil ul{

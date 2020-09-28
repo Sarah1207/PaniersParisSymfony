@@ -25,7 +25,8 @@
                                 <li><strong>Adresse email</strong> :{{ user.email }}</li>
                             </ul>
 
-                                <button><a href="{{ path('index') }}">retour sur la page d'accueil</a></button>
+                            <span id="returnAccueil"><a href="{{ path('index') }}">retour sur la page d'accueil</a> </span>
+                        <span id="returnAccueil"><a href="{{ path('register_edit',{id: user.id}) }}">Modifier mes informations</a> </span>
                     </div>
                 </div>
             </div>

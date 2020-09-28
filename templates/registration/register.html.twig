@@ -16,7 +16,12 @@
                     {{ form_start(registrationForm) }}
                     <div id="form1">
 
-                        <h1>Nouveau client ?</h1>
+
+                        {% if editMode %}
+                            <h1>Modification de mes informations</h1>
+                        {% else %}
+                            <h1>Nouveau client ?</h1>
+                        {% endif %}
 
                             <form action="{{ path('app_login') }}" method="POST">
                                 {{ form_row(registrationForm.pseudo, {'attr': {'placeholder': "Saisissez un pseudo" }}) }}
@@ -38,7 +43,13 @@
                                 </div>
 
 
-                                <input type="submit" id="inscription" value="Inscription">
+                                    <button type="submit" id="inscription">
+                                    {% if editMode %}
+                                        Enregistrer les modifications
+                                    {% else %}
+                                        Inscription
+                                    {% endif %}
+                                    </button>
                                 {{ form_end(registrationForm) }}
 
                             </form>
