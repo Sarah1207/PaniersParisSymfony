@@ -44,7 +44,7 @@
             {# SE CONNECTER/ CREER UN COMPTE/MA COMMANDE #}
             <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
 
-                <div id="connexion" class="infoscompte">
+                <div class="infoscompte">
 
                     {% block login %}
                     {% if not app.user %}
@@ -57,8 +57,9 @@
 
                         <input type="text" name="pseudo" placeholder="Votre pseudo">
                         <input type="password" name="password" placeholder="Votre mot de passe">
-                        <a href="{{ path('app_register') }}"> Inscription </a>
-                        <button type="submit"> Connexion </button>
+                            <a class="btnheader" href="{{ path('app_register') }}"> Inscription </a>
+
+                                <button type="submit"> Connexion </button>
 
 
 
@@ -69,9 +70,9 @@
                     </form>
                         <span><a href="compte.html"><small>Mot de passe oublié ? <br> Cliquez ici</small></a> </span>
                     {% else %}
-                        <h5> <i class="fas fa-user-alt"> </i> <a href="{{ path('user',{id: app.user.id}) }}"> {{ app.user.pseudo }} </a></h5>
-                        <a href="{{ path('user',{id: app.user.id}) }}"> Profil </a>
-                        <a href="{{ path('app_logout') }}"> Se déconnecter </a><br><br>
+                        <br><h5> <i class="fas fa-user-alt"> </i> <a href="{{ path('user',{id: app.user.id}) }}"> {{ app.user.pseudo }} </a></h5><br><br>
+                        <a class="btnheader" href="{{ path('user',{id: app.user.id}) }}"> Profil </a>
+                        <a class="btnheader" href="{{ path('app_logout') }}"> Se déconnecter </a><br><br>
 
                     {% endif %}
 

@@ -1,61 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block login %}{% endblock %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Se connecter {% endblock %}
 
 {% block body %}
-<form method="post">
+
 {% if error %}
-    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
-    {% block form2 %}
-<main>
-    <div class="compte2">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12>
-                    <div id="form2">
-
-    {#  {% if app.user %}
-    <div class="mb-3">
-        You are logged in as {{ app.user.pseudo}}, <a href="{{ path('app_logout') }}">Logout</a>
-    </div>
-{% endif %}#}
 
 
 
-<h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
-<label for="inputPseudo">Pseudo</label>
-<input type="text" value="{{ last_username }}" name="pseudo" id="inputPseudo" class="form-control" required autofocus>
-<label for="inputPassword">Password</label>
-<input type="password" name="password" id="inputPassword" class="form-control" required>
 
-<input type="hidden" name="_csrf_token"
-       value="{{ csrf_token('authenticate') }}"
->
-                {% endblock %}
-{#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+{% block form2 %}
+<body id="login">
+    <main>
+        <form method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+                        <div id="form2">
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Connexion
-    </button>
-</form>
-     </div>
-     </div>
-    </div>
-    </div>
-     </div>
+                            <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1><br>
+
+                            <label for="inputPseudo">Pseudo</label><br>
+                                <input type="text" placeholder="Saisissez votre pseudo" name="pseudo" id="inputPseudo" class="form-control" required autofocus><br><br>
+                            <label for="inputPassword">Password</label><br>
+                                <input type="password" name="password" id="inputPassword" class="form-control" required><br><br>
+
+
+                                <input type="submit" id="connexion" value="Connexion">
+
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </main>
+
+</body>
+
+
 {% endblock %}
 
-
+{% endblock %}
