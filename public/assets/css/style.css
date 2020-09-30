@@ -220,6 +220,7 @@ input[type="submit"] {
     text-align: center;
     margin-right: auto;
     margin-left :auto;
+
 }
 
 #header input {
@@ -272,7 +273,7 @@ input[type="submit"] {
 #header .btnheader{
     border-radius:3px;
     border: none;
-    padding-right:1%;
+    padding-right:2%;
     padding-left:3%;
     padding-top :1%;
     padding-bottom :1%;
@@ -379,7 +380,7 @@ input[type="submit"] {
 .accueil a { 
     color: white;
     display : inline-block;
-    margin-top: 2%;
+    margin-top: 1%;
     text-transform: uppercase;
     font-family: "amatic regular";
     font-size : 1.5rem;
@@ -678,7 +679,7 @@ input[type="submit"] {
     font-weight: bold;
 }
 
-#profil #returnAccueil a{
+#profil .returnAccueil a{
     text-decoration: none;
     color: black;
     border-radius:3px;
@@ -716,14 +717,14 @@ input[type="submit"] {
 }
 
 
-#profil #returnAccueil:hover{
+#profil .returnAccueil:hover{
     cursor: pointer;
     background-color:#079992 ;
     color: white;
 }
 
 
-#profil #returnAccueil a:hover{
+#profil .returnAccueil a:hover{
     color: white;
     background-color:#079992
 }
@@ -733,6 +734,79 @@ input[type="submit"] {
 }
 
 /* FIN PAGE PROFIL VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+
+/* PAGE ADMIN VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+#admin #header header{
+    background-color: darkred;
+}
+
+#admin h1{
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+#admin h2{
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+#admin .exit{
+    position: absolute;
+    right: -150px;
+    top: 30px;
+    color: black;
+}
+
+#admin .exit:hover{
+    color: #079992;
+}
+
+#admin li{
+    list-style-type: none;
+}
+
+
+#admin tr{
+    margin-left:2% ;
+    margin-right: 2%;
+    border: 1px solid black;
+    font-family: "lato regular";
+}
+
+#admin th{
+    margin-left: 8%;
+    margin-right: 8%;
+    color: white;
+    background-color: #079992;
+    font-family: "amatic bold";
+    font-size: 1.3rem;
+}
+#admin td{
+    text-align: center;
+    border: 1px solid black;
+    width: 400px;
+}
+
+#admin table{
+    border: 2px dashed black;
+    text-align: center;
+    margin-bottom: 60px;
+}
+#admin .trash{
+    color: black;
+}
+
+#admin .trash:hover{
+    color: red;
+}
+
+/* FIN PAGE ADMIN VERSION MOBILE.............................*/
 /*............................................................*/
 /*............................................................*/
 
