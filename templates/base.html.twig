@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+{% block header %}
 <header id="header">
 
     <div class="container">
@@ -51,6 +51,7 @@
                 <div class="infoscompte">
 
                     {% block login %}
+                    
                         {% if not app.user %}
 
                             <form action="{{ path('app_login') }}" method="POST">
@@ -65,36 +66,37 @@
 
 
                                 <input type="hidden" name="_csrf_token"
-                                       value="{{ csrf_token('authenticate') }}"
-                                >
+                                       value="{{ csrf_token('authenticate') }}">
+                                
+                             </form>
+                    
+                             <span><a href="compte.html"><small>Mot de passe oublié ? <br> Cliquez ici</small></a> </span>
+                        
+                    {% else %}
 
-                            </form>
-                            <span><a href="compte.html"><small>Mot de passe oublié ? <br> Cliquez ici</small></a> </span>
-                        {% else %}
-                            <br><h5><i class="fas fa-user-alt"> </i> <a
-                                    href="{{ path('user',{id: app.user.id}) }}"> {{ app.user.pseudo }} </a></h5><br><br>
-                            <a class="btnheader" href="{{ path('user',{id: app.user.id}) }}"> Profil </a>
-                            <a class="btnheader" href="{{ path('app_logout') }}"> Se déconnecter </a><br><br>
-
-                            <h5>
-                                <a href="{{ path('commande') }}">
-
-
-                                        <span>
-                                            {{ serviceCommand.quantite() }}
-                                        </span>
-
-
-                                    <i class="fas fa-shopping-basket"> </i>
-
-                                    Ma Commande
-                                </a>
-                            </h5>
-
+                        <h5> <i class="fas fa-user-alt"> </i> <a href="{{ path('user',{id: app.user.id}) }}"> {{ app.user.pseudo }} </a></h5>
+                        <br>
+                        
+                        {% if is_granted('ROLE_ADMIN') %}
+                           <a class="btnheader" href="{{path('admin',{id: app.user.id}) }}"> Admin </a>
+                           <br>
+                           <br>
                         {% endif %}
+                        
+                        <a class="btnheader" href="{{ path('user',{id: app.user.id}) }}"> Profil </a>
+                        <a class="btnheader" href="{{ path('app_logout') }}"> Se déconnecter </a><br><br>
+          
+                        <h5> <a href="{{ path('commande') }}"> 
+                        <span> {{ serviceCommand.quantite() }} </span> &nbsp;
+                        <i class="fas fa-shopping-basket"> </i> &nbsp; Ma commande 
+                        </a> </h5>
+                                       
+
+                    {% endif %}
 
 
                     {% endblock %}
+
 
                 </div>
 
@@ -106,7 +108,7 @@
 
 </header>
 
-
+{% endblock %}
 {% block body %}
 {% endblock %}
 

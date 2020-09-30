@@ -221,6 +221,7 @@ input[type="submit"] {
     text-align: center;
     margin-right: auto;
     margin-left :auto;
+
 }
 
 #header input {
@@ -272,6 +273,26 @@ input[type="submit"] {
     margin-top: 2%;
     margin-bottom: 2%;
     padding: 2%;
+}
+
+
+#header .btnheader{
+    border-radius:3px;
+    border: none;
+    padding-right:2%;
+    padding-left:3%;
+    padding-top :1%;
+    padding-bottom :1%;
+    background-color: #c4c9c7;
+    font-size: 1rem;
+    font-family: "amatic bold";
+    font-style: normal;
+    margin-right: 2px;
+    color: black;
+}
+
+#header .btnheader a:hover{
+    cursor: pointer;
 }
 
 /*FIN HEADER..................................................*/
@@ -365,7 +386,7 @@ input[type="submit"] {
 .accueil a {
     color: white;
     display : inline-block;
-    margin-top: 2%;
+    margin-top: 1%;
     text-transform: uppercase;
     font-family: "amatic regular";
     font-size : 1.5rem;
@@ -547,7 +568,96 @@ input[type="submit"] {
     font-style: italic;
     font-size: 0.8rem;
     color: #7d7f7d;
+    text-align: center;
+}
+
+/* FIN PAGE LOGIN VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+
+
+/* PAGE PROFIL VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+#profil #recapmembre{
+    border: 2px dashed black;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Amatic Regular";
+}
+
+#profil #recapmembre li{
+    list-style-type: none;
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+#profil h3{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: 2.2rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+}
+
+#profil .returnAccueil a{
+    text-decoration: none;
+    color: black;
+    border-radius:3px;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    padding-top :1%;
+    padding-bottom :1%;
+    background-color: #c4c9c7;
+    font-size: 1.3rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+}
+
+#profil #delete a{
+    text-decoration: none;
+    color: black;
+    border-radius:3px;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    padding-top :1%;
+    padding-bottom :1%;
+    background-color: #c4c9c7;
+    font-size: 1.3rem;
+    font-family: "amatic bold";
+    font-weight: bold;
+    font-style: normal;
+}
+
+#profil #delete a:hover{
+    color: white;
+    background-color:darkred;
+}
+
+
+#profil .returnAccueil:hover{
+    cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+}
+
+
+#profil .returnAccueil a:hover{
+    color: white;
+    background-color:#079992
     text-align: left;
+
 }
 
 #form1 button,
@@ -561,6 +671,80 @@ input[type="submit"] {
 }
 
 /* FIN COMPTE VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+
+
+/* PAGE ADMIN VERSION MOBILE.............................*/
+/*............................................................*/
+/*............................................................*/
+#admin #header header{
+    background-color: darkred;
+}
+
+#admin h1{
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+#admin h2{
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+#admin .exit{
+    position: absolute;
+    right: -150px;
+    top: 30px;
+    color: black;
+}
+
+#admin .exit:hover{
+    color: #079992;
+}
+
+#admin li{
+    list-style-type: none;
+}
+
+
+#admin tr{
+    margin-left:2% ;
+    margin-right: 2%;
+    border: 1px solid black;
+    font-family: "lato regular";
+}
+
+#admin th{
+    margin-left: 8%;
+    margin-right: 8%;
+    color: white;
+    background-color: #079992;
+    font-family: "amatic bold";
+    font-size: 1.3rem;
+}
+#admin td{
+    text-align: center;
+    border: 1px solid black;
+    width: 400px;
+}
+
+#admin table{
+    border: 2px dashed black;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#admin .trash{
+    color: black;
+}
+
+#admin .trash:hover{
+    color: red;
+}
+
+/* FIN PAGE ADMIN VERSION MOBILE.............................*/
 /*............................................................*/
 /*............................................................*/
 

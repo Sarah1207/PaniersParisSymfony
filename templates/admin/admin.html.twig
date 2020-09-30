@@ -1,0 +1,193 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Interface Admin{% endblock %}
+{% block header %}
+{% endblock %}
+
+{% block body %}
+<main id="admin">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+    <h1>Interface Admin  </h1>
+
+                <a href="{{path('index')}}"><i class="fas fa-door-open fa-3x exit"></i></a>
+
+
+{# ---------------------------------- ADMIN USERS -------------------------------- #}
+
+    <h2>  <i class="fas fa-user-cog"></i> Liste des membres : </h2>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>
+                            Nom complet
+                        </th>
+                        <th>
+                            Pseudo
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Telephone
+                        </th>
+                        <th>
+                            DOB
+                        </th>
+                        <th>
+                            Adresse complète
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>
+                                {{ user.prenom }} {{ user.prenom}}
+                            </td>
+                            <td>
+                                {{ user.pseudo}}
+                            </td>
+                            <td>
+                                {{ user.email}}
+                            </td>
+                            <td>
+                                {{ user.tel}}
+                            </td>
+                            <td>
+                                {{ user.DOB}}
+                            </td>
+                            <td>
+                                {{ user.adresse}} {{ user.cp}} {{ user.ville}}
+                            </td>
+                            <td>
+                                <span id="delete"><a href="{{ path('admin_user_delete',{id: user.id}) }}"><i class="fas fa-trash-alt trash"></i></a> </spa
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+{# ---------------------------------- ADMIN PANIERS -------------------------------- #}
+
+
+
+
+    <h2> <i class="fas fa-shopping-basket"></i> Liste des paniers :</h2>
+
+                <table class="formAdmin">
+                    <thead>
+                    <tr>
+                        <th>
+                            Nom
+                        </th>
+                        <th>
+                            Composition
+                        </th>
+                        <th>
+                            Prix/€
+                        </th>
+                        <th>
+                            Poids/kg
+                        </th>
+                        <th>
+                            Stock
+                        </th>
+                        <th>
+                            Description du panier
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for panier in paniers %}
+                        <tr>
+                            <td>
+                                {{ panier.nomPanier }}
+                            </td>
+                            <td>
+                                {{ panier.composition }}
+                            </td>
+                            <td>
+                                {{ panier.prixPanier}}
+                            </td>
+                            <td>
+                                {{ panier.poidsPanier }}
+                            </td>
+                            <td>
+                                {{ panier.stock }}
+                            </td>
+                            <td>
+                                {{ panier.descriptionPanier }}
+                            </td>
+                            <td>
+                                <span id="delete"><a href="{{ path('admin_paniers_delete',{id: panier.id}) }}"><i class="fas fa-trash-alt trash"></i></a> </spa
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+{# ---------------------------------- ADMIN PRODUCTEURS -------------------------------- #}
+    <h2><i class="fas fa-tractor"></i> Liste des producteurs :</h2>
+
+    <table class="formAdmin">
+        <thead>
+        <tr>
+            <th>
+                Nom complet
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Ville
+            </th>
+            <th>
+                Departement
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for producteur in producteurs %}
+            <tr>
+                <td>
+                    {{ producteur.nom }} {{ producteur.prenom}}
+                </td>
+                <td>
+                    {{ producteur.type}}
+                </td>
+                <td>
+                    {{ producteur.ville}}
+                </td>
+                <td>
+                    {{ producteur.departement}}
+                </td>
+                <td>
+                    <span id="delete"><a href="{{ path('admin_producteur_delete',{id: producteur.id}) }}"><i class="fas fa-trash-alt trash"></i> </a> </spa
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+                 </div>
+                 </div>
+                 </div>
+
+
+</main>
+
+
+
+{% endblock %}
