@@ -8,6 +8,7 @@
 
 
     <main>
+
         <div class="container">
 
             <div class="row">
@@ -20,32 +21,46 @@
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
-                    <h2><i class="fas fa-check"> </i> &nbsp; Confirmation de commande </h2>
+                    <h2><i class="fas fa-check"> </i> Confirmation de commande </h2>
+
+                    <div class='confirmation_commande'>
 
 
-                    <p class='confirmation_commande'>
-                        <i class='far fa-check-square'> </i> &nbsp;
-                        Votre commande a bien été enregistrée.
+                        Merci {{ user.pseudo }}! Votre commande est bien enregistrée.
+
+
                         <br>
+                        <br>
+
+                        Référence commande :  <b> <u>  N°{{ commande}} </u> </b>
+                        <br>
+                        <br>
+
                         Nous vous invitons à retirer vos achats dans notre boutique à l'accueil Click & Collect.
-                        <br> <br>
-                        <i class='fas fa-exclamation'></i> &nbsp; <u> Référence commande : </u> [...]
-                    </p>
-
-
-                    <p class='apres_commande'>
-                        <i class='fas fa-long-arrow-alt-right'></i> &nbsp; <a href='contact.php'> Voir l'adresse Click &
-                            Collect</a>
                         <br>
-                        <i class='fas fa-long-arrow-alt-right'></i> &nbsp; <a href="{{ path('paniers') }}"> Nouvelle
-                            commande </a>
+
+                    </div>
+
+                    <hr>
+
+                    <h2>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                        Continuer sur notre site
+                    </h2>
+                    <div class='apres_commande'>
+                        <a class="lien_apres" href="{{ path('contact') }}"> Voir l'adresse Click & Collect</a>
                         <br>
-                        <i class='fas fa-long-arrow-alt-right'></i> &nbsp; <a href='index.php'> Retour à l'accueil </a>
-                    </p>
+                        <a class="lien_apres" href="{{ path('paniers') }}"> Nouvelle commande </a>
+                        <br>
+                        <a class="lien_apres" href="{{ path('index') }}"> Retour à l'accueil </a>
+                    </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </main>
 
 
