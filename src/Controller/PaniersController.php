@@ -16,9 +16,7 @@ class PaniersController extends AbstractController
      */
     public function index(PaniersRepository $paniersRepository)
     {
-
         $paniers = $paniersRepository->findAll();
-
 
         return $this->render('paniers/paniers.html.twig', [
             'panierleger' => $paniers[0],

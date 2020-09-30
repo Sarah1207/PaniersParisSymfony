@@ -33,14 +33,13 @@ class UserController extends AbstractController
      *
      * @return Response
      */
-    public function delete(User $user)
-    {
+    public function delete(User $user){
         $em = $this->getDoctrine()->getManager();
         $em->remove($user);
         $em->flush();
-
         return $this->render('index/index.html.twig');
+
+
     }
 }
-
 
