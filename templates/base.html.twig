@@ -23,7 +23,8 @@
 
             {# LOGO #}
             <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-                <a href="{{ path('index') }}"> <img src="{{ asset('assets/img/Logo_blanc.png') }}" alt="Logo Paniers Paris" id="logo"/> </a>
+                <a href="{{ path('index') }}"> <img src="{{ asset('assets/img/Logo_blanc.png') }}"
+                                                    alt="Logo Paniers Paris" id="logo"/> </a>
             </div>
 
             {# HAMBURGER POUR VERSION MOBILE #}
@@ -34,10 +35,13 @@
             {# NAV #}
             <div class="nav col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                 <nav id="navHeader" class="text-center text-nowrap">
-                    <a href="{{ path('index') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Concept</a>
-                    <a href="{{ path('paniers') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Paniers du
+                    <a href="{{ path('index') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}"
+                                                        alt="puce_nav_blanc"/> Concept</a>
+                    <a href="{{ path('paniers') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}"
+                                                          alt="puce_nav_blanc"/> Paniers du
                         mois</a>
-                    <a href="{{ path('commande') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Ma Commande </a>
+                    <a href="{{ path('commande') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}"
+                                                           alt="puce_nav_blanc"/> Ma Commande </a>
                 </nav>
             </div>
 
@@ -47,43 +51,52 @@
                 <div class="infoscompte">
 
                     {% block login %}
-                    {% if not app.user %}
+                    
+                        {% if not app.user %}
 
-                    <form action="{{ path('app_login') }}" method="POST">
-                        <h5> <i class="fas fa-user-alt"> </i>  <a href="#">&nbsp; Mon compte </a></h5>
-
-
-
-
-                        <input type="text" name="pseudo" placeholder="Votre pseudo">
-                        <input type="password" name="password" placeholder="Votre mot de passe">
-                            <a class="btnheader" href="{{ path('app_register') }}"> Inscription </a>
-
-                                <button type="submit"> Connexion </button>
+                            <form action="{{ path('app_login') }}" method="POST">
+                                <h5><i class="fas fa-user-alt"> </i> <a href="#">&nbsp; Mon compte </a></h5>
 
 
+                                <input type="text" name="pseudo" placeholder="Votre pseudo">
+                                <input type="password" name="password" placeholder="Votre mot de passe">
+                                <a class="btnheader" href="{{ path('app_register') }}"> Inscription </a>
 
-                        <input type="hidden" name="_csrf_token"
-                               value="{{ csrf_token('authenticate') }}"
-                        >
+                                <button type="submit"> Connexion</button>
 
-                    </form>
-                        <span><a href="compte.html"><small>Mot de passe oublié ? <br> Cliquez ici</small></a> </span>
+
+                                <input type="hidden" name="_csrf_token"
+                                       value="{{ csrf_token('authenticate') }}">
+                                
+                             </form>
+                    
+                             <span><a href="compte.html"><small>Mot de passe oublié ? <br> Cliquez ici</small></a> </span>
+                        
                     {% else %}
 
-
-
-                        <h5> <i class="fas fa-user-alt"> </i> <a href="{{ path('user',{id: app.user.id}) }}"> {{ app.user.pseudo }} </a></h5><br>
+                        <h5> <i class="fas fa-user-alt"> </i> <a href="{{ path('user',{id: app.user.id}) }}"> {{ app.user.pseudo }} </a></h5>
+                        <br>
+                        
                         {% if is_granted('ROLE_ADMIN') %}
-                           <a class="btnheader" href="{{path('admin',{id: app.user.id}) }}">Admin</a><br><br>
+                           <a class="btnheader" href="{{path('admin',{id: app.user.id}) }}"> Admin </a>
+                           <br>
+                           <br>
                         {% endif %}
+                        
                         <a class="btnheader" href="{{ path('user',{id: app.user.id}) }}"> Profil </a>
                         <a class="btnheader" href="{{ path('app_logout') }}"> Se déconnecter </a><br><br>
+          
+                        <h5> <a href="{{ path('commande') }}"> 
+                        <span> {{ serviceCommand.quantite() }} </span> &nbsp;
+                        <i class="fas fa-shopping-basket"> </i> &nbsp; Ma commande 
+                        </a> </h5>
+                                       
 
                     {% endif %}
 
-                    <h5> <a href="{{ path('commande') }}"><i class="fas fa-shopping-basket"> </i> &nbsp; Ma commande </a> </h5>
-                    {% endblock  %}
+
+                    {% endblock %}
+
 
                 </div>
 
@@ -125,9 +138,12 @@
             <div class="navfooter col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <nav>
 
-                    <a href="{{ path('app_register') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Créer un compte</a>
-                    <a href="{{ path('contact') }}"><img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/> Nous contacter</a>
-                    <a href="{{ path('mentions') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}" alt="puce_nav_blanc"/>Mentions
+                    <a href="{{ path('app_register') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}"
+                                                               alt="puce_nav_blanc"/> Créer un compte</a>
+                    <a href="{{ path('contact') }}"><img src="{{ asset ('assets/img/puce_nav_blanc.png') }}"
+                                                         alt="puce_nav_blanc"/> Nous contacter</a>
+                    <a href="{{ path('mentions') }}"> <img src="{{ asset ('assets/img/puce_nav_blanc.png') }}"
+                                                           alt="puce_nav_blanc"/>Mentions
 
                         légales</a>
                 </nav>
@@ -152,7 +168,6 @@
     </div>
 
 </footer>
-
 
 
 {% block javascripts %}
