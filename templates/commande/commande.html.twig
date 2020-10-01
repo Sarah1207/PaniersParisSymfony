@@ -20,11 +20,11 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <h2><i class="fas fa-shopping-basket"></i> Ma Commande</h2>
                 </div>
+                {# FIN TITRE #}
 
-
-                {% if items| length > 0 %}
-
-                    {# TABLE #}
+                {# Conditions #}
+                {% if items| length > 0 and app.user %}
+                    {# TABLE CONDITIONS = user connecté + commande #}
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div id="maCommande">
                             <div>
@@ -35,9 +35,9 @@
                                     <tr>
                                         <th>Nom(s) article(s)</th>
                                         <th> Quantité article(s)</th>
-                                        <th> Prix unitaire TTC </th>
-                                        <th> Prix total TTC </th>
-                                        <th> <i class="fas fa-trash-alt"></i></th>
+                                        <th> Prix unitaire TTC</th>
+                                        <th> Prix total TTC</th>
+                                        <th><i class="fas fa-trash-alt"></i></th>
                                     </tr>
                                     </thead>
 
@@ -47,16 +47,17 @@
                                             <td> {{ item.article.nomPanier }}</td>
                                             <td> {{ item.quantite }} </td>
                                             <td> {{ item.article.prixPanier }} &euro;</td>
-                                            <td> {{ item.article.prixPanier * item.quantite}} &euro;</td>
-                                            <td> <a href="{{ path('commande_delete',{id:item.article.id}) }}"> <i class="fas fa-trash-alt"> </i> </a> </td>
+                                            <td> {{ item.article.prixPanier * item.quantite }} &euro;</td>
+                                            <td><a href="{{ path('commande_delete',{id:item.article.id}) }}"> <i
+                                                            class="fas fa-trash-alt"> </i> </a></td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
 
                                     <tfoot class="montant">
                                     <tr>
-                                        <td colspan="3">Montant total de la commande </td>
-                                        <td colspan="2"> {{total}} &euro;</td>
+                                        <td colspan="3">Montant total de la commande</td>
+                                        <td colspan="2"> {{ total }} &euro;</td>
                                     </tr>
                                     </tfoot>
                                 </table>
@@ -66,12 +67,10 @@
                             <br/>
 
                             <div id="payerCommande" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                {# Bouton 1 #}
-                                <button><a href="{{ path('paniers') }}">Modifier ma sélection </a></button>
 
-
-                                {# Bouton 2 JS #}
-                                <button type="submit"> Régler ma commande</button>
+                                <form action="{{ path('paiement') }}" method="post">
+                                    <input type="submit" id="checkout-button" value="Accèder au paiement"></input>
+                                </form>
 
                             </div>
 
@@ -79,35 +78,45 @@
                     </div>
 
 
-                {% else %}
-
+                    {# Conditions #}
+                {% elseif items| length == 0 and app.user %}
+                    {# TABLE CONDITIONS = user connecté + pas de commande #}
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div id="maCommande">
                             <table>
                                 <tr>
                                     <td> Votre panier est vide !</td>
-                                    <td><a href='compte.php'> Se connecter </a> ou <a href='compte.php'> Créer un
-                                            compte </a>
-                                    </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
 
 
+                    {# Conditions #}
+                {% elseif not app.user %}
+                    {# TABLE CONDITIONS = user pas connecté #}
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div id="maCommande">
+                            <table>
+                                <td><a href='{{ path('app_login') }}'> Se connecter </a>
+                                    ou <a href='{{ path('app_register') }}'> Créer un compte </a>
+                                </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    {# Conditions #}
                 {% endif %}
-
-
-
-
-                {# MODAL AFFICHAGE AVEC JS #}
-                <div id="alertConnexionCommande" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <p>Merci de vous connecter ou de créer un compte</p>
-                    <i id="closeAlertConnexionCommande" class="fas fa-window-close"></i>
-                </div>
 
             </div>
         </div>
     </main>
 
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://js.stripe.com/v3/"></script>
 {% endblock %}

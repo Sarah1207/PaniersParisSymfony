@@ -84,9 +84,94 @@
                             </table>
 
 
+
+
+                    {# ---------------------------------- ADMIN PRODUITS-------------------------------- #}
+                    <h2><i class="fas fa-tractor"></i> Liste des produits -- Octobre 2020 :</h2>
+
+                    <table class="formAdmin">
+                        <thead>
+                        <tr>
+                            <th> Producteur -- Fornisseur </th>
+                            <th> Référence produit</th>
+                            <th> Nom produit</th>
+                            <th> Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for produit in produits %}
+                            <tr>
+                                <td> {{ produit.producteur.prenom }}  {{ produit.producteur.nom }} </td>
+                                <td> {{ produit.id }} </td>
+                                <td> {{ produit.nomProduit }} </td>
+                                <td>
+                                    <span id="delete">
+                                        <a href="{{ path('admin_produits_delete',{id:produit.id}) }}">
+                                            <i class="fas fa-trash-alt trash"> </i>
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+
+                    {# ---------------------------------- ADMIN COMMANDES -------------------------------- #}
+                    <h2><i class="fas fa-tractor"></i> Liste des commandes -- Octobre 2020 :</h2>
+
+                    <table class="formAdmin">
+                        <thead>
+                        <tr>
+                            <th> Référence commande</th>
+                            <th> Membre</th>
+                            <th> Prix/€</th>
+                            <th> Date</th>
+                            <th> Statut</th>
+                            <th> Retrait</th>
+                            <th> Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for commande in commandes %}
+                            <tr>
+                                <td> {{ commande.id }} </td>
+                                <td> {{ commande.user.id }} -- {{ commande.user.pseudo }} </td>
+                                <td> {{ commande.prixTotal }} </td>
+                                <td> {{ commande.date | date('d/m/Y')}} </td>
+                                <td> {{ commande.statut }} </td>
+                                <td>
+                                    <select>
+                                    <option> {{ commande.retrait }} </option>
+                                    <option> oui </option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <span id="delete">
+                                        <a href="{{ path('admin_commandes_delete',{id:commande.id}) }}">
+                                            <i class="fas fa-trash-alt trash"> </i>
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+
 {# ---------------------------------- ADMIN PRODUCTEURS -------------------------------- #}
-
-
                             <h2><i class="fas fa-tractor"></i> Liste des producteurs :</h2>
 
                             <table>

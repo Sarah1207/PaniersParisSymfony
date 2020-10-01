@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PaniersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -48,15 +50,13 @@ class Paniers
     private $composition;
 
 
-
-    ///////////////////////////////////////////////////////////
-
+    /* *************************************************************************/
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    //////////////////////////////////////////////////////////////
+    /* *************************************************************************/
     public function getNomPanier(): ?string
     {
         return $this->nomPanier;
@@ -68,7 +68,8 @@ class Paniers
 
         return $this;
     }
-    ///////////////////////////////////////////////////////////////
+
+    /* *************************************************************************/
     public function getDescriptionPanier(): ?string
     {
         return $this->descriptionPanier;
@@ -80,7 +81,7 @@ class Paniers
 
         return $this;
     }
-    /////////////////////////////////////////////////////////////////
+    /* *************************************************************************/
 
     public function getPrixPanier(): ?int
     {
@@ -93,7 +94,8 @@ class Paniers
 
         return $this;
     }
-    ///////////////////////////////////////////////////////////////////
+
+    /* *************************************************************************/
     public function getPoidsPanier(): ?float
     {
         return $this->poidsPanier;
@@ -105,7 +107,8 @@ class Paniers
 
         return $this;
     }
-    /////////////////////////////////////////////////////////////////////
+
+    /* *************************************************************************/
     public function getStock(): ?int
     {
         return $this->stock;
@@ -118,7 +121,7 @@ class Paniers
         return $this;
     }
 
-    ///////////////////////////////////////////////////////////////////////////////
+    /* *************************************************************************/
     public function getComposition(): ?string
     {
         return $this->composition;
@@ -130,8 +133,5 @@ class Paniers
 
         return $this;
     }
-
-
-
 
 }

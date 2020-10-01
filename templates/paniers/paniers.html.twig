@@ -47,18 +47,17 @@
                             <p class="prixpanier"> {{ panierleger.prixPanier }} &euro;</p>
 
                             <div class="quantitepanier">
-                                <label for="quantite1">Choisissez la quantité</label>
-                                <select name="quantite1" id="quantite1">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
+                                <form method="post" action="{{ path('commande_add',{id:panierleger.id}) }}">
+                                    <label for="quantite1">Choisissez la quantité</label>
+                                    <select name="quantite" id="quantite1">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+
+                                    <input type="submit" id="ajoutCommande1" value="Ajouter à ma Commande">
+                                </form>
                             </div>
-
-                            <button type="submit" id="ajoutCommande1"><a
-                                        href="{{ path('commande_add',{id:panierleger.id}) }}"> Ajouter à Ma Commande </a>
-                            </button>
-
                         </figcaption>
                     </figure>
 
@@ -83,17 +82,17 @@
                             <p class="prixpanier"> {{ panierduo.prixPanier }} &euro;</p>
 
                             <div class="quantitepanier">
-                                <label for="quantite2">Choisissez la quantité</label>
-                                <select name="quantite2" id="quantite2">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </div>
+                                <form method="post" action="{{ path('commande_add',{id:panierduo.id}) }}">
+                                    <label for="quantite2">Choisissez la quantité</label>
+                                    <select name="quantite" id="quantite2">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
 
-                            <button type="submit" id="ajoutCommande2"><a
-                                        href="{{ path('commande_add',{id:panierduo.id}) }}">Ajouter à Ma Commande </a>
-                            </button>
+                                    <input type="submit" id="ajoutCommande2" value="Ajouter à ma Commande">
+                                </form>
+                            </div>
 
                         </figcaption>
                     </figure>
@@ -120,19 +119,21 @@
 
                             <p class="prixpanier"> {{ panierbig.prixPanier }} &euro;</p>
 
-
                             <div class="quantitepanier">
-                                <label for="quantite3"> <b>Choisissez la quantité</b></label>
-                                <select name="quantite3" id="quantite3">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
+                                <form method="post" action="{{ path('commande_add',{id:panierbig.id}) }}">
+                                    <label for="quantite3"> <b>Choisissez la quantité</b></label>
+                                    <select name="quantite" id="quantite3">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+
+
+                                    <input type="submit" id="ajoutCommande3" value="Ajouter à ma Commande">
+
+                                </form>
                             </div>
 
-                            <button type="submit" id="ajoutCommande3"><a
-                                        href="{{ path('commande_add',{id:panierbig.id}) }}">Ajouter à Ma Commande </a>
-                            </button>
 
                         </figcaption>
                     </figure>
@@ -143,24 +144,8 @@
             </div>
 
 
-            <div class="row">
-                {# MODAL AFFICHAGE JS #}
-                <div id="alertAjoutPanier" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
-                    <p>Votre sélection a été ajoutée à votre commande</p>
-                    <i id="closeAlertAjoutPanier" class="fas fa-window-close"></i>
-                </div>
-                {# FIN MODAL AFFICHAGE JS #}
-            </div>
-
         </div>
 
     </main>
-
-{% endblock %}
-{% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('assets/javascript/script_paniersdumois1.js') }}"></script>
-    <script src="{{ asset('assets/javascript/script_paniersdumois2.js') }}"></script>
-    <script src="{{ asset('assets/javascript/script_paniersdumois3.js') }}"></script>
 
 {% endblock %}
