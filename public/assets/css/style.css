@@ -348,8 +348,6 @@ input[type="submit"] {
     text-decoration: none;
 }
 
-
-
 #index #container-image {
     background-image: url(../img/farmer.jpg);
     background-repeat: no-repeat;
@@ -484,8 +482,7 @@ input[type="submit"] {
     text-decoration: underline;
 }
 
-#compte #form1
-{
+#compte #form1 {
     border: 2px dashed black;
     text-align: center;
     padding-left: 40px;
@@ -525,6 +522,7 @@ input[type="submit"] {
     color: white;
 
 }
+
 #compte #form1 #agree label{
     font-size: 1.2rem;
     margin-top: 5%;
@@ -537,6 +535,7 @@ input[type="submit"] {
     text-align: left;
     font-size: 2rem;
 }
+
 #compte placeholder{
     font-size: 1.8rem;
 }
@@ -562,6 +561,7 @@ input[type="submit"] {
 #compte #profil1 #agree{
     font-size: 1.1rem;
 }
+
 /* FIN PAGE COMPTE VERSION MOBILE.............................*/
 /*............................................................*/
 /*............................................................*/
@@ -716,13 +716,11 @@ input[type="submit"] {
     background-color:darkred;
 }
 
-
 #profil .returnAccueil:hover{
     cursor: pointer;
     background-color:#079992 ;
     color: white;
 }
-
 
 #profil .returnAccueil a:hover{
     color: white;
@@ -758,7 +756,7 @@ input[type="submit"] {
 
 #admin .exit{
     position: absolute;
-    right: -150px;
+    right: -30px;
     top: 30px;
     color: black;
 }
@@ -770,7 +768,6 @@ input[type="submit"] {
 #admin li{
     list-style-type: none;
 }
-
 
 #admin tr{
     margin-left:2% ;
@@ -787,6 +784,7 @@ input[type="submit"] {
     font-family: "amatic bold";
     font-size: 1.3rem;
 }
+
 #admin td{
     text-align: center;
     border: 1px solid black;
@@ -798,6 +796,7 @@ input[type="submit"] {
     text-align: center;
     margin-bottom: 60px;
 }
+
 #admin .trash{
     color: black;
 }
@@ -806,7 +805,135 @@ input[type="submit"] {
     color: red;
 }
 
-/* FIN PAGE ADMIN VERSION MOBILE.............................*/
+#admin .edit{
+    color: black;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+#admin .edit:hover{
+    color:#079992;
+}
+
+#admin .square{
+    color: black;
+}
+
+#admin .square:hover{
+    color: royalblue;
+}
+
+/* FIN PAGE ADMIN VERSION MOBILE..............................*/
+/*............................................................*/
+/*............................................................*/
+
+
+/* PAGE FORM-PRODUCTEUR/PANIERS ADMIN VERSION MOBILE..................*/
+/*............................................................*/
+/*............................................................*/
+
+#form_producteur #form_product,
+#form_paniers #formulaire_paniers{
+    border: 2px dashed black;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Amatic Regular";
+}
+
+#form_producteur h1,
+#form_paniers h1{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#form_producteur .exit ,
+#form_paniers .exit{
+    position: absolute;
+    right: -30px;
+    top: 30px;
+    color: black;
+}
+
+#form_producteur.exit:hover,
+#form_paniers .exit:hover{
+    color: #079992;
+}
+
+#form_producteur h2,
+#form_paniers h2{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#form_producteur input,
+#form_paniers input{
+    display : block;
+    text-align: center;
+    margin-right: auto;
+    margin-left :auto;
+    height: 25px;
+    width: 250px;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    border: 1px solid #7d7f7d;
+    border-radius: 3px;
+}
+
+#form_producteur input::placeholder,
+#form_paniers input::placeholder{
+    font-family: "lato italic";
+    font-style: italic;
+    font-size: 1rem;
+    color: #7d7f7d;
+    text-align: center;
+}
+
+#form_producteur label,
+#form_paniers label{
+    font-size: 2rem;
+}
+
+#form_producteur .add,
+#form_paniers .add{
+    padding-bottom: 30px;
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    margin-bottom : 10px;
+    margin-top: 25px;
+    background-color: #c4c9c7;
+    color: #010101;
+    font-family: "amatic bold";
+    font-weight: bold;
+    border-radius:3px;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    padding-top :1%;
+}
+
+#form_producteur .add:hover,
+#form_paniers .add:hover{
+    cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+}
+
+#form_producteur #form_description_producteur ,
+#form_paniers #form_description_panier{
+    height: 90px;
+    border: 1px solid black;
+}
+
+/* FIN FORM-PRODUCTEUR/PANIERS ADMIN VERSION MOBILE...................*/
 /*............................................................*/
 /*............................................................*/
 

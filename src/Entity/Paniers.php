@@ -23,7 +23,7 @@ class Paniers
     private $nomPanier;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string")
      */
     private $descriptionPanier;
 
@@ -43,7 +43,7 @@ class Paniers
     private $stock;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string")
      */
     private $composition;
 
