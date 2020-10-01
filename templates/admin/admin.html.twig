@@ -84,10 +84,36 @@
                             </table>
 
 
+                    {# ---------------------------------- ADMIN PRODUCTEURS -------------------------------- #}
+                    <h2><i class="fas fa-tractor"></i> Liste des producteurs :</h2>
 
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Nom complet</th>
+                            <th>Type</th>
+                            <th>Ville</th>
+                            <th>Departement</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for producteur in producteurs %}
+                            <tr>
+                                <td>{{ producteur.nom }} {{ producteur.prenom}}</td>
+                                <td>{{ producteur.type}}</td>
+                                <td>{{ producteur.ville}}</td>
+                                <td>{{ producteur.departement}}</td>
+                                <td><span id="delete"><a href="{{ path('admin_producteur_delete',{id: producteur.id}) }}"><i class="fas fa-trash-alt trash"></i></a></span>
+                                    <span><a href="{{ path('producteurs_edit',{id: producteur.id}) }}"><i class="far fa-edit edit"></i></a> </span>
+                                    <span><a href="{{ path('producteurs_add') }}"><i class="far fa-plus-square square"></i></a> </span></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
 
                     {# ---------------------------------- ADMIN PRODUITS-------------------------------- #}
-                    <h2> i class="fas fa-carrot"></i> Liste des produits -- Octobre 2020 :</h2>
+                    <h2> <i class="fas fa-carrot"></i> Liste des produits -- Octobre 2020 :</h2>
 
                     <table class="formAdmin">
                         <thead>
@@ -159,45 +185,6 @@
                         {% endfor %}
                         </tbody>
                     </table>
-
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </main>
-
-
-
-{# ---------------------------------- ADMIN PRODUCTEURS -------------------------------- #}
-                            <h2><i class="fas fa-tractor"></i> Liste des producteurs :</h2>
-
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Nom complet</th>
-                                        <th>Type</th>
-                                        <th>Ville</th>
-                                        <th>Departement</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for producteur in producteurs %}
-                                    <tr>
-                                        <td>{{ producteur.nom }} {{ producteur.prenom}}</td>
-                                        <td>{{ producteur.type}}</td>
-                                        <td>{{ producteur.ville}}</td>
-                                        <td>{{ producteur.departement}}</td>
-                                        <td><span id="delete"><a href="{{ path('admin_producteur_delete',{id: producteur.id}) }}"><i class="fas fa-trash-alt trash"></i></a></span>
-                                        <span><a href="{{ path('producteurs_edit',{id: producteur.id}) }}"><i class="far fa-edit edit"></i></a> </span>
-                                        <span><a href="{{ path('producteurs_add') }}"><i class="far fa-plus-square square"></i></a> </span></td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
