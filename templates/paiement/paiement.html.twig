@@ -24,14 +24,13 @@
                         <h2><i class="fas fa-shopping-basket"></i> Récapitulatif de votre commande</h2>
 
                         {# ################################ recap commande ####################################### #}
-
                         <table id="recapitulatifCommande">
                             <thead>
                             <tr>
-                                <th> <b> Nom(s) article(s) </b> </th>
-                                <th> <b> Quantité article(s) </b> </th>
-                                <th> <b> Prix unitaire TTC </b> </th>
-                                <th> <b> Prix total TTC </b> </th>
+                                <th><b> Nom(s) article(s) </b></th>
+                                <th><b> Quantité article(s) </b></th>
+                                <th><b> Prix unitaire TTC </b></th>
+                                <th><b> Prix total TTC </b></th>
                             </tr>
                             </thead>
 
@@ -48,15 +47,15 @@
 
                             <tfoot class="montant">
                             <tr>
-                                <td colspan="3"> <b> Montant total de la commande </b> </td>
-                                <td colspan="2"> <b> {{ total }} &euro; </b></td>
+                                <td colspan="3"><b> Montant total de la commande </b></td>
+                                <td colspan="2"><b> {{ total }} &euro; </b></td>
                             </tr>
 
                             </tfoot>
                         </table>
 
-
                     </div>
+                    {# ################################ fin recap commande ####################################### #}
 
 
                     {# ################################ STRIPE ####################################### #}
@@ -79,6 +78,7 @@
                         </form>
 
                     </div>
+                    {# ################################ FIN STRIPE ####################################### #}
 
                     {# FIN CONDITION UTILISATEUR CONNECTE #}
                 {% endif %}
