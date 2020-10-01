@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Paiement {% endblock %}
+{% block title %} Ma commande {% endblock %}
 
 
 
@@ -16,84 +16,104 @@
                     <br/>
                 </div>
 
-                {# DEBUT CONDITION SI UTILISATEUR CONNECTE #}
+                {# ####################### TITRE ########################## #}
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <h2><i class="fas fa-shopping-basket"></i> Ma Commande</h2>
+                </div>
+                {# ########################## FIN TITRE ###################### #}
 
-                {% if app.user %}
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-
-                        <h2><i class="fas fa-shopping-basket"></i> Récapitulatif de votre commande</h2>
-
-                        {# ################################ recap commande ####################################### #}
-                        <table id="recapitulatifCommande">
-                            <thead>
-                            <tr>
-                                <th><b> Nom(s) article(s) </b></th>
-                                <th><b> Quantité article(s) </b></th>
-                                <th><b> Prix unitaire TTC </b></th>
-                                <th><b> Prix total TTC </b></th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            {% for item in items %}
-                                <tr>
-                                    <td> {{ item.article.nomPanier }}</td>
-                                    <td> {{ item.quantite }} </td>
-                                    <td> {{ item.article.prixPanier }} &euro;</td>
-                                    <td> {{ item.article.prixPanier * item.quantite }} &euro;</td>
-                                </tr>
-                            {% endfor %}
-                            </tbody>
-
-                            <tfoot class="montant">
-                            <tr>
-                                <td colspan="3"><b> Montant total de la commande </b></td>
-                                <td colspan="2"><b> {{ total }} &euro; </b></td>
-                            </tr>
-
-                            </tfoot>
-                        </table>
-
-                    </div>
-                    {# ################################ fin recap commande ####################################### #}
-
-
-                    {# ################################ STRIPE ####################################### #}
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-
-                        <h2><i class="fas fa-shopping-basket"></i> Paiement </h2>
-
-                        <form action="{{ path('paiement_success') }}" method="post" id="payment-form">
+                {# ################################ Conditions ########################## #}
+                {% if items| length > 0 and app.user %}
+                    {# TABLE CONDITIONS = user connecté + commande #}
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div id="maCommande">
                             <div>
-                                <label for="card-element"> <i class="far fa-credit-card"></i> Carte de crédit </label>
-                                <div id="card-element">
-                                    <!-- A Stripe Element will be inserted here. -->
-                                </div>
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Nom(s) article(s)</th>
+                                        <th> Quantité article(s)</th>
+                                        <th> Prix unitaire TTC</th>
+                                        <th> Prix total TTC</th>
+                                        <th><i class="fas fa-trash-alt"></i></th>
+                                    </tr>
+                                    </thead>
 
-                                <!-- Used to display Element errors. -->
-                                <div id="card-errors" role="alert"></div>
+                                    <tbody>
+                                    {% for item in items %}
+                                        <tr>
+                                            <td> {{ item.article.nomPanier }}</td>
+                                            <td> {{ item.quantite }} </td>
+                                            <td> {{ item.article.prixPanier }} &euro;</td>
+                                            <td> {{ item.article.prixPanier * item.quantite }} &euro;</td>
+                                            <td><a href="{{ path('commande_delete',{id:item.article.id}) }}"> <i
+                                                            class="fas fa-trash-alt"> </i> </a></td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+
+                                    <tfoot class="montant">
+                                    <tr>
+                                        <td colspan="3">Montant total de la commande</td>
+                                        <td colspan="2"> {{ total }} &euro;</td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
                             </div>
-                            {# ################################ BOUTON PAYER ####################################### #}
-                            <button id="payer"> Payer</button>
-                        </form>
 
+                            <br/>
+                            <br/>
+
+                            <div id="payerCommande" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                                <form action="{{ path('paiement') }}" method="post">
+                                    <input type="submit" id="checkout-button" value="Accèder au paiement"></input>
+                                </form>
+
+                            </div>
+                        </div>
                     </div>
-                    {# ################################ FIN STRIPE ####################################### #}
 
-                    {# FIN CONDITION UTILISATEUR CONNECTE #}
+
+                    {# ######################################  Conditions ######################################### #}
+                {% elseif items| length == 0 and app.user %}
+                    {# TABLE CONDITIONS = user connecté + pas de commande #}
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div id="maCommande">
+                            <table>
+                                <tr>
+                                    <td> Votre panier est vide !</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    {# ######################################### Conditions ######################################### #}
+                {% elseif not app.user %}
+                    {# TABLE CONDITIONS = user pas connecté #}
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div id="maCommande">
+                            <table>
+                                <td><a href='{{ path('app_login') }}'> Se connecter </a>
+                                    ou <a href='{{ path('app_register') }}'> Créer un compte </a>
+                                </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    {# Fin Conditions #}
                 {% endif %}
 
-                {# FERMUTURE DIV CLASS ROW #}
             </div>
-
-            {# FERMUTURE DIV CLASS CONTAINER #}
         </div>
     </main>
+
 
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="{{ asset('assets/javascript/script_paiement.js') }}"></script>
 {% endblock %}
