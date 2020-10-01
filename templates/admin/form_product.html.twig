@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Producteurs{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+
+{% block body %}
+
+    <main id="form_producteur">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <h1>Interface Admin  </h1>
+                            <a href="{{path('admin')}}"><i class="fas fa-door-open fa-3x exit"></i></a>
+
+                            {{ form_start(form_product) }}
+                                <div id="form_product">
+
+
+                                {% if editMode %}
+                                <h2>Modifier les informations ?</h2>
+                                {% else %}
+                                <h2>Nouveau producteur ?</h2>
+                                {% endif %}
+
+                                    <form action="{{ path('producteurs_add') }}" method="POST">
+                                        {{ form_row(form_product.nom, {'attr': {'placeholder': "Saisissez le nom" }})}}
+                                        {{ form_row(form_product.prenom, {'attr': {'placeholder': "Saisissez le prénom" }}) }}
+                                        {{ form_row(form_product.type, {'attr': {'placeholder': "Saisissez le type de producteurs" }}) }}
+                                        {{ form_row(form_product.ville, {'attr': {'placeholder': "Saisissez la ville" }}) }}
+                                        {{ form_row(form_product.departement, {'attr': {'placeholder': "Saisissez le département" }}) }}
+                                        {{ form_row(form_product.description_producteur, {'attr': {'placeholder': "Description producteur" }}) }}
+
+                                            <button type="submit" class="add">
+
+                                                {% if editMode %}
+                                                    Enregistrer
+                                                {% else %}
+                                                    Ajouter
+                                                {% endif %}
+                                            </button>
+                                    </form>
+                                </div>
+                        {{ form_end(form_product) }}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+
+
+
+{% block footer %}
+{% endblock %}
