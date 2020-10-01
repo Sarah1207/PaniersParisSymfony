@@ -2,13 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\CommandeRepository;
+use App\Repository\ProduitsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CommandeRepository", repositoryClass=CommandeRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\ProduitsRepository", repositoryClass=ProduitsRepository::class)
  */
 class Commande
 {
@@ -19,146 +18,53 @@ class Commande
      */
     private $id;
 
-
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="string", length=100)
      */
-    private $prixTotal;
+    private $nomProduit;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="commande")
+     * @ORM\ManyToOne(targetEntity=Producteurs::class, inversedBy="produits")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $date;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $statut;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $retrait;
-
-    /**
-     * @ORM\OneToMany(targetEntity=QuantityCommand::class, mappedBy="command", orphanRemoval=true)
-     */
-    private $quantityCommands;
-
-    public function __construct()
-    {
-        $this->quantityCommands = new ArrayCollection();
-    }
+    private $producteur;
 
 
 
-    /////////////////////////////////////////////////////////////////////
+    /* *************************************************************************/
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    ////////////////////////////////////////////////////////////////////
+    /* *************************************************************************/
 
-    public function getPrixTotal(): ?float
+    public function getNomProduit(): ?string
     {
-        return $this->prixTotal;
+        return $this->nomProduit;
     }
 
-    public function setPrixTotal(float $prixTotal): self
+    public function setNomProduit(string $nomProduit): self
     {
-        $this->prixTotal = $prixTotal;
-
-        return $this;
-    }
-    ///////////////////////////////////////////////////////////////////////
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
+        $this->nomProduit = $nomProduit;
 
         return $this;
     }
 
-    ////////////////////////////////////////////////////////////////////
+    /* *************************************************************************/
 
-    public function getDate(): ?\DateTimeInterface
+    public function getProducteur(): ?Producteurs
     {
-        return $this->date;
+        return $this->producteur;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setProducteur(?Producteurs $producteur): self
     {
-        $this->date = $date;
+        $this->producteur = $producteur;
 
         return $this;
     }
 
-    ////////////////////////////////////////////////////////////////////
-    public function getStatut(): ?string
-    {
-        return $this->statut;
-    }
-
-    public function setStatut(string $statut): self
-    {
-        $this->statut = $statut;
-
-        return $this;
-    }
-
-    ////////////////////////////////////////////////////////////////
-    public function getRetrait(): ?string
-    {
-        return $this->retrait;
-    }
-
-    public function setRetrait(string $retrait): self
-    {
-        $this->retrait = $retrait;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|QuantityCommand[]
-     */
-    public function getQuantityCommands(): Collection
-    {
-        return $this->quantityCommands;
-    }
-
-    public function addQuantityCommand(QuantityCommand $quantityCommand): self
-    {
-        if (!$this->quantityCommands->contains($quantityCommand)) {
-            $this->quantityCommands[] = $quantityCommand;
-            $quantityCommand->setCommand($this);
-        }
-
-        return $this;
-    }
-
-    public function removeQuantityCommand(QuantityCommand $quantityCommand): self
-    {
-        if ($this->quantityCommands->contains($quantityCommand)) {
-            $this->quantityCommands->removeElement($quantityCommand);
-            // set the owning side to null (unless already changed)
-            if ($quantityCommand->getCommand() === $this) {
-                $quantityCommand->setCommand(null);
-            }
-        }
-
-        return $this;
-    }
 
 }

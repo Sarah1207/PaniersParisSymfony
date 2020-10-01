@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paniers{% endblock %}
+{% block header %}
+
+{% endblock %}
+{% block body %}
+
+
+
+<body>
+    <main id="form_paniers">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        <h1>Interface Admin  </h1>
+                        <a href="{{path('admin')}}"><i class="fas fa-door-open fa-3x exit"></i></a>
+
+                            {{ form_start(form_paniers) }}
+                                <div id="formulaire_paniers">
+
+                                    {% if editMode %}
+                                    <h2>Modification informations paniers</h2>
+                                    {% else %}
+                                    <h2>Nouveau panier ?</h2>
+                                    {% endif %}
+
+                                        <form action="{{ path('paniers_add') }}" method="POST">
+                                            {{ form_row(form_paniers.nom_panier, {'attr': {'placeholder': "Saisissez le nom" }})}}
+                                            {{ form_row(form_paniers.prix_panier, {'attr': {'placeholder': "Saisissez le prix" }}) }}
+                                            {{ form_row(form_paniers.poids_panier, {'attr': {'placeholder': "Saisissez le poids" }}) }}
+                                            {{ form_row(form_paniers.stock, {'attr': {'placeholder': "Saisissez le stock" }}) }}
+                                            {{ form_row(form_paniers.composition, {'attr': {'placeholder': "Saisissez la composition" }}) }}
+                                            {{ form_row(form_paniers.description_panier, {'attr': {'placeholder': "Saisissez la description" }}) }}
+
+
+                                                <button type="submit" class="add">
+                                                    {% if editMode %}
+                                                    Enregistrer
+                                                    {% else %}
+                                                    Ajouter
+                                                    {% endif %}
+                                                </button>
+                                        </form>
+                                </div>
+                            {{ form_end(form_paniers) }}
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+{% endblock %}
+
+
+
+{% block footer %}
+{% endblock %}
