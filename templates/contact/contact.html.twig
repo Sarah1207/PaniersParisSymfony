@@ -17,34 +17,34 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
-                        <form action="" id="formCtc">
+                        {{ form_start(form, {attr: {id: 'formCtc'}}) }}
 
                             <table class="form-contact">
 
                                 <tr>
                                     <td>
-                                        <label for="nomCtc">Votre nom<span class="required">*</span></label>
+                                        <label id="nomCtc">Votre nom<span class="required">*</span></label>
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="Tapez votre nom" id="nomCtc">
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <label for="emailCtc">Votre e-mail<span class="required">*</span></label>
-                                    </td>
-                                    <td>
-                                        <input type="email" placeholder="Tapez votre adresse email" id="emailCtc">
+                                        {{ form_widget(form.nom) }}
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td>
-                                        <label for="comCtc">Commentaire<span class="required">*</span></label>
+                                        <label id="emailCtc">Votre e-mail<span class="required">*</span></label>
                                     </td>
                                     <td>
-                                        <textarea name="Commentaire" id ="comCtc" class="long field-textarea"></textarea>
+                                        {{ form_widget(form.email) }}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label id="comCtc">Commentaire<span class="required">*</span></label>
+                                    </td>
+                                    <td>
+                                        {{ form_widget(form.commentaire) }}
                                     </td>
                                 </tr>
 
@@ -58,10 +58,15 @@
 
                             </table>
 
-                        </form>
+                        {{ form_end(form) }}
 
-                        <!--affichage avec JS-->
-                        <p id="erreurCtc"> </p>
+                        <!--affichage message de confirmation envoi données-->
+
+                        {% for message in app.flashes('success') %}
+                        <div id="confirmCtc" >
+                        {{ message }}
+                        </div>
+                        {% endfor %}
 
                     </div>
 
@@ -110,4 +115,11 @@
 
     </main>
     <!-- FIN CONTACT-->
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ asset('assets/javascript/script_header.js') }}"></script>
+    <script src="{{ asset('assets/javascript/script_formcontact.js') }}"></script>
+    <script src="{{ asset('assets/javascript/script_footer.js') }}"></script>
 {% endblock %}

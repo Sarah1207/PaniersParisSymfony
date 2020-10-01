@@ -5,3 +5,4 @@ twig:
         userRepository: '@App\Repository\UserRepository'
         commandeRepository: '@App\Repository\CommandeRepository'
         serviceCommand: '@App\Service\ServiceCommande'
+        serviceNewsletter: '@App\Service\ServiceNewsletter'

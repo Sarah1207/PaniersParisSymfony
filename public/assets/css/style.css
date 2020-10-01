@@ -289,6 +289,7 @@ input[type="submit"] {
     font-style: normal;
     margin-right: 2px;
     color: black;
+
 }
 
 #header .btnheader a:hover{
@@ -1031,9 +1032,6 @@ input[type="submit"] {
 }
 
 
-
-
-
 /*FIN PAGE PANIERS...........................................*/
 /*............................................................*/
 /*............................................................*/
@@ -1325,17 +1323,20 @@ et utilisateurs connectés */
     background-color: #079992;
     border: 1px solid #7d7f7d;
     border-radius: 10px 10px / 5px 5px;
+    color : white;
     font-family: "Amatic regular";
     font-size: 1.5rem;
     margin-left: 5px;
 }
 
-#erreurCtc {
+#confirmCtc {
     font-family: "Amatic regular";
     text-align: center;
-    background-color: red;
+    background-color: #079992;
+    border: 1px solid #7d7f7d;
+    border-radius: 10px 10px / 5px 5px;
     color : white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0 30% 10px 30%;
 }
 

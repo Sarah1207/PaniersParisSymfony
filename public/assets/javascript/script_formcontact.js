@@ -16,20 +16,21 @@ console.log("comCtc")
 var erreurCtc = document.getElementById("erreurCtc");
 console.log("erreurCtc")
 
-/* phase validation formulaire */
 
-var nomValue = nomCtc.value;
-var emailValue = emailCtc.value;
-var comValue = comCtc.value;
+/*** phase validation formulaire ***/
 
-formCtc.addEventListener("submit", function (e) {
-    console.log("after submit")
+/*formCtc.addEventListener("submit", function (e) {
+    console.log("submit")
     e.preventDefault();
+
+    var nomValue = nomCtc.value;
+    var emailValue = emailCtc.value;
+    var comValue = comCtc.value;
 
     if (nomValue == "" || emailValue == "" || comValue == "") {
         erreurCtc.innerHTML = "Veuillez remplir les champs vides";
-        throw "error";
+
         formCtc.reset();
     }
 
-})
+})*/

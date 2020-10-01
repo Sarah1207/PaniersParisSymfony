@@ -38,8 +38,6 @@ class UserController extends AbstractController
         $em->remove($user);
         $em->flush();
         return $this->render('index/index.html.twig');
-
-
     }
 }
 

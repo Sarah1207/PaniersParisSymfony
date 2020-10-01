@@ -2,9 +2,6 @@
 
 {% block title %}Index{% endblock %}
 
-
-
-
 {% block body %}
     <main id="index">
     <!--MODAL COOKIES-->
@@ -60,9 +57,10 @@
         <div id="modalNL">
 
             <p><i class="far fa-envelope"></i> &nbsp;Souscrire à notre newsletter ?</p>
+            {% set form_newsletter_modal = serviceNewsletter.formNewsletter()%}
+            {{ form_start(form_newsletter_modal, { attr: { id: 'FormNL', action: path('app_newsletter') } }) }}
 
-            <form id="FormNL">
-                <input id="emailNL" type="email" placeholder="Votre email">
+                {{ form_widget(form_newsletter_modal.email,{'attr': {'id':'emailNL', 'placeholder' : 'Votre email'}}) }}
 
                 <button class="Btn" type="submit"> Confirmer</button>
                 <a href="#" id="btnNo" class="Btn"> Plus tard</a>
@@ -70,8 +68,12 @@
                 <!--affichage texte avec js-->
                 <p> <small id="txtConfNewsletter"> </small></p>
 
-            </form>
-
+            {{ form_end(form_newsletter_modal) }}
+            {% for message in app.flashes('success') %}
+                <div id="confirmCtc" >
+                    {{ message }}
+                </div>
+            {% endfor %}
         </div>
 
         <!--------------------------NOS VALEURS DEBUT -------------------------->
@@ -235,5 +237,3 @@
     </main>
 
 {% endblock %}
-
-

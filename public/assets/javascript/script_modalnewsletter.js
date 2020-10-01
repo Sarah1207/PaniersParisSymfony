@@ -15,8 +15,8 @@ btnNo.addEventListener("click", function () {
 
 // VALIDATION MODAL NEWSLETTER 
 
-var FormNL = document.getElementById("FormNL");
-var emailNL = document.getElementById("emailNL");
+var FormNL = document.getElementById("newsletter_form");
+var emailNL = document.getElementById("newsletter_form_email");
 var txtConfNewsletter = document.getElementById("txtConfNewsletter");
 
 FormNL.addEventListener("submit", function (e) {

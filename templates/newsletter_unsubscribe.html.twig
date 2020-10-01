@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Newsletter - Désabonnement{% endblock %}
+
+
+{% block body %}
+    <!-- NEWSLETTER --------------------------------------------------------------------------->
+    <main id="newsletter-main">
+
+        <div class="container">
+
+            <div class= "row">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <h2> Se désabonner de notre newsletter ?</h2>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <p>
+                        Vous êtes redirigé(e) sur cette page car il semble que vous avez cliqué sur le lien "se désabonner" présent sur votre mail de newsletter.
+                     </p><br><br>
+                     <p>
+                        Êtes-vous certain(e) de ne plus vouloir recevoir la newsletter de notre site ?
+                     </p>
+
+                    <a class="btnheader" href="{{ path('newsletter_unsubscribe', {id: newsletter.id, confirmed: 1}) }}" >Confirmer ?</a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <!-- FIN NEWSLETTER -->
+{% endblock %}
