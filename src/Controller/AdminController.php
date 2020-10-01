@@ -13,12 +13,8 @@ use App\Repository\ProducteursRepository;
 use App\Repository\ProduitsRepository;
 use App\Repository\QuantityCommandRepository;
 use App\Repository\UserRepository;
-
 use Doctrine\ORM\EntityManagerInterface;
-
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -43,16 +39,11 @@ class AdminController extends AbstractController
         UserRepository $userRepository,
         PaniersRepository $paniersRepository,
         ProducteursRepository $producteursRepository,
-
-        EntityManagerInterface $manager
-
+        EntityManagerInterface $manager,
         ProduitsRepository $produitsRepository,
         CommandeRepository $commandeRepository,
         QuantityCommandRepository $quantityCommandRepository
-
-    )
-
-    {
+    ){
         //$pdo->query('SELECT * FROM user WHERE id = :id')->fetch()
         $users = $userRepository->findAll();
         $paniers = $paniersRepository->findAll();
@@ -159,8 +150,6 @@ class AdminController extends AbstractController
                 'editMode'=> $producteurs->getId() !== null,
             ]);
 
-
-
     }
 
     /**
@@ -196,12 +185,7 @@ class AdminController extends AbstractController
             'editMode'=> $paniers->getId() !== null,
         ]);
 
-
-
     }
-}
-
-
 
     /* *************************************************************************/
     /**

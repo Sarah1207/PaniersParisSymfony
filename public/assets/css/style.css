@@ -520,7 +520,7 @@ input[type="submit"] {
     font-size: 1.2rem;
     margin-top: 5%;
     margin-right: 13%;
-
+}
 #compte #champs {
     text-align:left;
     font-family: "amatic bold";
@@ -715,7 +715,7 @@ input[type="submit"] {
 
 #profil .returnAccueil a:hover{
     color: white;
-    background-color:#079992
+    background-color:#079992;
     text-align: left;
 
 }
@@ -739,7 +739,7 @@ input[type="submit"] {
 /*............................................................*/
 /*............................................................*/
 #admin #header header{
-    background-color: darkred;
+    background-color: #8b0000;
 }
 
 #admin h1{
