@@ -34,11 +34,14 @@ class QuantityCommand
      */
     private $command;
 
+
+    /* *************************************************************************/
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /* *************************************************************************/
     public function getQuantite(): ?int
     {
         return $this->quantite;
@@ -50,7 +53,7 @@ class QuantityCommand
 
         return $this;
     }
-
+    /* *************************************************************************/
     public function getPanier(): ?Paniers
     {
         return $this->panier;
@@ -63,6 +66,7 @@ class QuantityCommand
         return $this;
     }
 
+    /* *************************************************************************/
     public function getCommand(): ?Commande
     {
         return $this->command;
