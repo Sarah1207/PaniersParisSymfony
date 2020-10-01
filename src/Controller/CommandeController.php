@@ -22,8 +22,6 @@ class CommandeController extends AbstractController
         $total = $serviceCommande->getPrixTotal();
         $quantite = $serviceCommande->getQuantite();
 
-        dump($quantite);
-
         return $this->render('commande/commande.html.twig', [
             'items' => $commandeData,
             'total' => $total,
