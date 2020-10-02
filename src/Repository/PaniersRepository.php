@@ -48,3 +48,4 @@ class PaniersRepository extends ServiceEntityRepository
     }
     */
 }
+
