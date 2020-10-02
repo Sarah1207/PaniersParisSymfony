@@ -63,3 +63,4 @@ class CommandeController extends AbstractController
         return $this->redirectToRoute('commande');
     }
 }
+
