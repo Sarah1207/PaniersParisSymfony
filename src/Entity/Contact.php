@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ContactRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ContactRepository::class)
@@ -18,16 +19,26 @@ class Contact
     private $id;
 
     /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
      * @ORM\Column(type="string", length=50)
      */
     private $nom;
 
     /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\Email()
      * @ORM\Column(type="string", length=100)
      */
     private $email;
 
     /**
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
+     * @Assert\Length(
+     *     min="2",
+     *     max="450",
+     *     minMessage="Votre commentaire doit au minimum comprendre 2 caractères",
+     *     maxMessage="Votre commentaire ne peut dépasser 450 caractères"
+     * )
      * @ORM\Column(type="text")
      */
     private $commentaire;
