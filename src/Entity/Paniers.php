@@ -45,7 +45,7 @@ class Paniers
     private $stock;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string")
      */
     private $composition;
 

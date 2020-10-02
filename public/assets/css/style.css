@@ -251,6 +251,7 @@ input[type="submit"] {
     margin-right: auto;
     text-align :center;
     font-size:1rem;
+    cursor: pointer;
 }
 
 #header a {
@@ -260,7 +261,6 @@ input[type="submit"] {
 
 #header a:visited {
     text-decoration: none;
-    color: #fcfcfc;
 }
 
 #header small{
@@ -292,8 +292,11 @@ input[type="submit"] {
 
 }
 
-#header .btnheader a:hover{
+#header #infoscompte .btnheader a:hover{
     cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+
 }
 
 /*FIN HEADER..................................................*/
@@ -499,16 +502,14 @@ input[type="submit"] {
     padding-right: 40px;
     margin-top: 50px;
     font-family: "Amatic Regular";
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-#compte #coordonnees {
-    text-align:center;
-    font-family: "amatic bold";
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 2rem;
+#compte #inscription{
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
-
 
 #compte #inscription:hover{
     cursor: pointer;
@@ -517,29 +518,27 @@ input[type="submit"] {
 
 }
 
-#compte #form1 #agree label{
+#compte #form1 #agree label {
     font-size: 1.2rem;
     margin-top: 5%;
     margin-right: 13%;
 }
+
 #compte #champs {
     text-align:left;
     font-family: "amatic bold";
     font-size: 0.7rem;
-
 }
 
 #compte label {
     display: inline-block;
     width: 250px;
     text-align: left;
-
     font-size: 2rem;
 }
 
 #compte placeholder{
     font-size: 1.6rem;
-
 }
 
 #compte #form1 input,
@@ -591,45 +590,56 @@ input[type="submit"] {
 }
 
 #login #form2 #connexion{
-    padding-bottom: 30px;
-  }
-  
-#compte #form2 select,
-#compte #form2 #start {
+    font-size: 2rem;
+    padding-bottom: 45px;
+    width: 25%;
+    margin-top: 30px;
+    padding-left: 20px;
+    border: none;
+}
 
+#login #form2 #connexion:hover{
+    cursor: pointer;
+    background-color:#079992 ;
+    color: white;
+}
+
+#login h1{
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-decoration: underline;
+}
+
+
+#login #form2 label{
+    font-size: 2rem;
+    margin-bottom: 50px;
+
+}
+
+#login #form2 #inputPseudo{
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+#login #form2 input{
+    height: 35px;
     display: inline-block;
-    align-items:flex-start;
-    width: 100%;
+    width: 40%;
     border-radius: 3px;
     border: 1px solid #7d7f7d;
-    height: 30px;
-    align-items: left;
-    margin : 0;
     margin-bottom : 5px;
-    padding-inline-start: 0px;
+    margin-top: 0px;
+    padding-inline-start: 0px
+
 }
 
-#compte #form2 option,
-#compte #form2 #start {
-    font-family: 'lato regular';
-    font-size: 0.9rem;
-    color: #7d7f7d;
-    text-align: left;
-}
-
-#compte #p1,
-#compte #p2 {
-    text-align: center;
-    background-color: red;
-    color : white;
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-}
-
-#compte input::placeholder {
+#login input::placeholder {
     font-family: 'lato italic';
     font-style: italic;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #7d7f7d;
     text-align: center;
 }
@@ -709,6 +719,7 @@ input[type="submit"] {
 }
 
 #profil .returnAccueil:hover{
+    margin-top: 30px;
     cursor: pointer;
     background-color:#079992 ;
     color: white;
@@ -718,7 +729,10 @@ input[type="submit"] {
     color: white;
     background-color:#079992;
     text-align: left;
+}
 
+#profil ul{
+    margin-bottom: 30px;
 }
 
 #form1 button,
@@ -2093,3 +2107,4 @@ et utilisateurs connectés */
 /*............................................................*/
 /*............................................................*/
 /*............................................................*/
+
