@@ -48,3 +48,4 @@ class QuantityCommandRepository extends ServiceEntityRepository
     }
     */
 }
+
