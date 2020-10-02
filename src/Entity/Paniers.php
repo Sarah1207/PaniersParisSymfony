@@ -25,7 +25,7 @@ class Paniers
     private $nomPanier;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     private $descriptionPanier;
 
@@ -45,7 +45,7 @@ class Paniers
     private $stock;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     private $composition;
 
@@ -81,6 +81,7 @@ class Paniers
 
         return $this;
     }
+
     /* *************************************************************************/
 
     public function getPrixPanier(): ?int
