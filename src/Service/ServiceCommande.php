@@ -17,6 +17,7 @@ class ServiceCommande
     private $user;
 
     /* ********************************************************************************************************** */
+
     public function __construct(SessionInterface $session, PaniersRepository $paniersRepository, UserRepository $userRepository, Security $security)
     {
         $this->session = $session;
@@ -27,6 +28,7 @@ class ServiceCommande
     }
 
     /* *************************************** ADD **************************************************** */
+
     public function add(int $id, int $quantite)
     {
         $commande = $this->session->get('commande', []);
@@ -42,6 +44,7 @@ class ServiceCommande
 
 
     /* ******************************************* DELETE ******************************************************* */
+
     public function delete(int $id)
     {
         $commande = $this->session->get('commande', []);
@@ -54,6 +57,7 @@ class ServiceCommande
     }
 
     /* ************************************** GET COMMANDE ********************************************************* */
+
     public function getCommandeAll(): array
     {
         $commande = $this->session->get('commande', []);
@@ -70,6 +74,7 @@ class ServiceCommande
     }
 
     /* ******************************************* GET PRIX TOTAL ****************************************************** */
+
     public function getPrixTotal(): float
     {
         $total = 0;
@@ -83,6 +88,7 @@ class ServiceCommande
     }
 
     /* ********************************************** GET QUANTITE **************************************************** */
+
     public function getQuantite(): int
     {
         $quantite = 0;
