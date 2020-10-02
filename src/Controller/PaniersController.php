@@ -27,3 +27,4 @@ class PaniersController extends AbstractController
     }
 
 }
+
