@@ -30,7 +30,6 @@ class Produits
     private $producteur;
 
 
-
     /* *************************************************************************/
 
     public function getId(): ?int
